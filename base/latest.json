@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Base",
+  "_version": "0.0.1",
+  "compilerOptions": {
+    /* Base Options */
+    "lib": ["ESNext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "rootDir": "../../../../../../../",
+    "baseUrl": "../../../../../../../",
+    "paths": {
+      "@/*": ["../../../../../../../src/*"]
+    },
+
+    /* Output */
+    "target": "ES6",
+    "outDir": "dist",
+    "sourceMap": true,
+    "declaration": true,
+    "incremental": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+
+    /* Linting */
+    "checkJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true
+  },
+  "include": ["../../../../../../../src/**/*"],
+  "exclude": ["../../../../../../node_modules"]
+}
