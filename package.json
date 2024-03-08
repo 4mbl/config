@@ -1,6 +1,6 @@
 {
   "name": "@4mbl/tsconfig",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "tsconfig templates for typescript projects",
   "type": "module",
   "author": "4mbl",
