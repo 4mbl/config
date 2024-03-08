@@ -1,8 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Node",
-  "_version": "0.0.1",
-  "extends": "../base/0.0.1.json",
+  "_version": "1.0.0",
+  "extends": "../base/1.0.0.json",
   "compilerOptions": {
     "target": "ESNext",
     "moduleResolution": "NodeNext",
