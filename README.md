@@ -53,7 +53,7 @@ If you are extending a specific version of a template in your project, you can u
 
 Each template is versioned separately. The versioning scheme is: `major.minor.patch`
 
-* `major` - Major overhaul of the template. Rarely used.
+* `major` - Major overhaul of the template. Major changes to upstream templates warrant a major version on the inheriting templates.
 * `minor` - Breaking changes to the template.
 * `patch` - Non-breaking changes to the template.
 
