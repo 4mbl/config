@@ -19,24 +19,6 @@ Create a `tsconfig.json` file in the root of your project and extend the desired
 }
 ```
 
-To avoid path related problems, you should override the following settings in your project's `tsconfig` file.
-
-```jsonc
-{
-  "extends": "@4mbl/tsconfig/node/latest",
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"],
-  "compilerOptions": {
-    "rootDir": "src",
-    "paths": {
-      "@/*": ["*"]
-    }
-  }
-
-  /* your custom settings */
-}
-```
-
 ## Available templates
 
 There are currently three `tsconfig` templates.
