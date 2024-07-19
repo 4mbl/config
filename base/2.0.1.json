@@ -9,7 +9,7 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "moduleDetection": "force",
-    "rootDir": "${configDir}/",
+    "rootDir": "${configDir}/src",
     "baseUrl": "${configDir}/",
     "paths": {
       "@/*": ["${configDir}/src/*"]
