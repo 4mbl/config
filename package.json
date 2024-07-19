@@ -16,8 +16,9 @@
   ],
   "scripts": {
     "build": "node ./scripts/copyLatest.js *",
+    "cleanup": "node ./scripts/cleanup.js",
     "get:version": "node -pe \"require('./package.json')['version']\" > version.txt",
-    "release": "npm run get:version && npm run build && npm publish && git add . && git commit --file version.txt && git push && rm version.txt",
+    "release": "npm run get:version && npm run build && npm publish && npm run cleanup && git add . && git commit --file version.txt && git push && rm version.txt",
     "release:patch": "npm version patch --no-git-tag-version && npm run release",
     "release:minor": "npm version minor --no-git-tag-version && npm run release",
     "release:major": "npm version major --no-git-tag-version && npm run release"
