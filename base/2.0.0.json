@@ -9,10 +9,10 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "moduleDetection": "force",
-    "rootDir": "../../../../../../../",
-    "baseUrl": "../../../../../../../",
+    "rootDir": "${configDir}/",
+    "baseUrl": "${configDir}/",
     "paths": {
-      "@/*": ["../../../../../../../src/*"]
+      "@/*": ["${configDir}/src/*"]
     },
 
     /* Output */
@@ -35,6 +35,6 @@
     "strict": true,
     "noUncheckedIndexedAccess": true
   },
-  "include": ["../../../../../../../src/**/*"],
-  "exclude": ["../../../../../../node_modules"]
+  "include": ["${configDir}/src/**/*"],
+  "exclude": ["${configDir}/node_modules"]
 }
