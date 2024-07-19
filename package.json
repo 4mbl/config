@@ -1,7 +1,7 @@
 {
   "name": "@4mbl/tsconfig",
   "version": "1.0.1",
-  "description": "tsconfig templates for typescript projects",
+  "description": "TypeScript configuration templates for various environments.",
   "type": "module",
   "author": "4mbl",
   "license": "MIT",

@@ -1,6 +1,6 @@
 # @4mbl/tsconfig
 
-> Templates for `tsconfig` files for various environments.
+> TypeScript configuration templates for various environments.
 
 ## Usage
 
