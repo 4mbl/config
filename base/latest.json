@@ -9,10 +9,10 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "moduleDetection": "force",
-    "rootDir": "../../../../../../../",
-    "baseUrl": "../../../../../../../",
+    "rootDir": "${configDir}/",
+    "baseUrl": "${configDir}/",
     "paths": {
-      "@/*": ["../../../../../../../src/*"]
+      "@/*": ["${configDir}/src/*"]
     },
 
     /* Output */
@@ -25,6 +25,7 @@
     "esModuleInterop": true,
 
     /* Linting */
+    "strict": true,
     "checkJs": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
@@ -32,9 +33,8 @@
     "noImplicitReturns": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "strict": true,
     "noUncheckedIndexedAccess": true
   },
-  "include": ["../../../../../../../src/**/*"],
-  "exclude": ["../../../../../../node_modules"]
+  "include": ["${configDir}/src/**/*"],
+  "exclude": ["${configDir}/node_modules"]
 }
