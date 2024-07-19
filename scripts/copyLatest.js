@@ -1,6 +1,6 @@
 import fs, { copyFile } from 'fs';
+import { TS_CONFIGS } from './constants.js';
 
-const TS_CONFIGS = ['base', 'node', 'browser'];
 const ALLOWED_ARGS = ['*', ...TS_CONFIGS];
 
 function removeNonSemVerFiles(files) {
