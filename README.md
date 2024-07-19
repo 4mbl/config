@@ -23,15 +23,15 @@ Create a `tsconfig.json` file in the root of your project and extend the desired
 
 There are currently three `tsconfig` templates.
 
-### Base <kbd>[tsconfig](./base/latest.json) | [changelog](./base/CHANGELOG.md)</kbd>
+### Base <kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/base/latest.json) | [changelog](./base/changelog.md)</kbd>
 
 This is the base `tsconfig` file that is used by the other templates. It contains the basic configuration for TypeScript without any environment specific settings.
 
-### Node <kbd>[tsconfig](./node/latest.json) | [changelog](./node/CHANGELOG.md)</kbd>
+### Node <kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/node/latest.json) | [changelog](./node/changelog.md)</kbd>
 
 Extends the base template and adds settings specific to Node.js.
 
-### Browser <kbd>[tsconfig](./browser/latest.json) | [changelog](./browser/CHANGELOG.md)</kbd>
+### Browser <kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/browser/latest.json) | [changelog](./browser/changelog.md)</kbd>
 
 Extends the base template and adds settings specific to browser and React applications.
 
