@@ -25,19 +25,19 @@ There are currently three `tsconfig` templates.
 
 ### Base <kbd>[tsconfig](./base/latest.json) | [changelog](./base/CHANGELOG.md)</kbd>
 
-This is the base `tsconfig` file that is used by the other `tsconfig` files. It contains the basic configuration for TypeScript without any environment specific settings.
+This is the base `tsconfig` file that is used by the other templates. It contains the basic configuration for TypeScript without any environment specific settings.
 
 ### Node <kbd>[tsconfig](./node/latest.json) | [changelog](./node/CHANGELOG.md)</kbd>
 
-Extends the base `tsconfig` file and adds settings specific to Node.js.
+Extends the base template and adds settings specific to Node.js.
 
 ### Browser <kbd>[tsconfig](./browser/latest.json) | [changelog](./browser/CHANGELOG.md)</kbd>
 
-Extends the base `tsconfig` file and adds settings specific to browser and React applications.
+Extends the base template and adds settings specific to browser and React applications.
 
 ## Versioning
 
-The package and each template are versioned separately. Seperate versioning allows you to update the package without worrying about breaking changes to the templates. It also allows you to easily test newer versions of the templates by just updating the `extends` field in your project's `tsconfig` file.
+The package and each template are versioned separately. Seperate versioning allows you to update the package without worrying about breaking changes to the templates. It also allows you to easily test newer versions of the templates by just changing the `extends` field in the `tsconfig` file of your project.
 
 ### Package versioning
 
@@ -47,7 +47,7 @@ The package itself follows the following versioning scheme: `major.minor.patch`
 * `minor` - Non-base template is changed or added.
 * `patch` - Non-breaking changes to the templates.
 
-If you are using a specific version of the template in your project's `tsconfig` file, you can update the package without worrying about any breaking changes to your project.
+If you are extending a specific version of a template in your project, you can update the package without worrying about any breaking changes to your project.
 
 ### Template versioning
 
@@ -57,4 +57,4 @@ Each template is versioned separately. The versioning scheme is: `major.minor.pa
 * `minor` - Breaking changes to the template.
 * `patch` - Non-breaking changes to the template.
 
-Each template also has a `latest` version. However, it is not recommended to use the `latest` version in your project's `tsconfig` file as it may introduce breaking changes when the package is updated.
+Each template also has a `latest` version. However, it is not recommended to extend the `latest` version in your project as it may introduce breaking changes when the package is updated.
