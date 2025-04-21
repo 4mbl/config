@@ -35,7 +35,7 @@ Extends the base template and adds settings specific to Node.js.
 
 Extends the base template and adds settings specific to browser and React applications.
 
-### Next.js <kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/nextjs/latest.json) | [changelog](./nextjs/changelog.md)</kbd>
+### Next.js <kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/next/latest.json) | [changelog](./next/changelog.md)</kbd>
 
 Extends the base template and with settings from the Next.js app template.
 
