@@ -15,7 +15,7 @@
     "tsconfig"
   ],
   "scripts": {
-    "build": "node ./scripts/copyLatest.js *",
+    "build": "node ./scripts/copyLatest.js '*'",
     "delete:latest": "node ./scripts/deleteLatestJson.js",
     "delete:version": "node ./scripts/deleteVersionFile.js",
     "get:version": "node -pe \"require('./package.json')['version']\" > version.txt",
