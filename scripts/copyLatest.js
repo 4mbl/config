@@ -34,7 +34,7 @@ function compareSemanticVersions(versionA, versionB) {
   return 0;
 }
 
-if (process.argv.length !== 3) {
+if (process.argv.length !== TS_CONFIGS.length) {
   console.error(
     `Usage:\nnode scripts/copyLatest.js {${ALLOWED_ARGS.join(' | ')}}`
   );
