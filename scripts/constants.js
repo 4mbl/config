@@ -1,1 +1,1 @@
-export const TS_CONFIGS = ['base', 'node', 'browser'];
+export const TS_CONFIGS = ['base', 'node', 'browser', 'next'];

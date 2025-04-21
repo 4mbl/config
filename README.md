@@ -21,7 +21,7 @@ Create a `tsconfig.json` file in the root of your project and extend the desired
 
 ## Available templates
 
-There are currently three `tsconfig` templates.
+There are currently four `tsconfig` templates.
 
 ### Base <kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/base/latest.json) | [changelog](./base/changelog.md)</kbd>
 
@@ -34,6 +34,10 @@ Extends the base template and adds settings specific to Node.js.
 ### Browser <kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/browser/latest.json) | [changelog](./browser/changelog.md)</kbd>
 
 Extends the base template and adds settings specific to browser and React applications.
+
+### Next.js <kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/next/latest.json) | [changelog](./next/changelog.md)</kbd>
+
+Extends the base template and with settings from the Next.js app template.
 
 ## Versioning
 
