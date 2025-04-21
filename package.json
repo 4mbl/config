@@ -1,6 +1,6 @@
 {
   "name": "@4mbl/tsconfig",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "TypeScript configuration templates for various environments.",
   "type": "module",
   "author": "4mbl",
