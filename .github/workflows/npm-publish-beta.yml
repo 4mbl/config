@@ -39,6 +39,6 @@ jobs:
           npm version "$BETA_VERSION" --no-git-tag-version
 
       - name: Publish to npm
-        run: npm run release:beta
+        run: npm publish --tag beta
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

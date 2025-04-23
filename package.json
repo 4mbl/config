@@ -15,11 +15,7 @@
     "tsconfig"
   ],
   "scripts": {
-    "get-version": "npm pkg get version | sed 's/\"//g'",
-    "prep-release": "cp templates/*.json .",
-    "release": "node ./scripts/get-version.js && npm install && npm run prep-release && npm publish && git add . && git commit $(npm run get-version) && git push",
-    "release:beta": "node ./scripts/get-version.js && npm install && npm run prep-release && npm publish --tag beta && git add . && git commit $(npm run get-version) && git push",
-    "cleanup-release": "rm ./{base,browser,next,node}.json"
+    "build": "cp templates/*.json ."
   },
   "peerDependencies": {
     "typescript": ">=5.8.0"
