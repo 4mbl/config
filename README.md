@@ -14,7 +14,7 @@ Create a `tsconfig.json` file in the root of your project and extend the desired
 
 ```jsonc
 {
-  "extends": "@4mbl/tsconfig/node/latest"
+  "extends": "@4mbl/tsconfig/node"
   /* your custom settings */
 }
 ```
@@ -23,42 +23,28 @@ Create a `tsconfig.json` file in the root of your project and extend the desired
 
 There are currently four `tsconfig` templates.
 
-### Base <kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/base/latest.json) | [changelog](./base/changelog.md)</kbd>
+### Base <kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/base.json)</kbd>
 
-This is the base `tsconfig` file that is used by the other templates. It contains the basic configuration for TypeScript without any environment specific settings.
+This is the base `tsconfig` file that is used by the other templates. It contains common configuration for TypeScript with minimal environment specific settings.
 
-### Node <kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/node/latest.json) | [changelog](./node/changelog.md)</kbd>
+### Node <kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/node.json)</kbd>
 
-Extends the base template and adds settings specific to Node.js.
+Extends the base template with settings specific to Node.js.
 
-### Browser <kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/browser/latest.json) | [changelog](./browser/changelog.md)</kbd>
+### Browser <kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/browser.json)</kbd>
 
-Extends the base template and adds settings specific to browser and React applications.
+Extends the base template with settings specific to browser and React applications.
 
-### Next.js <kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/next/latest.json) | [changelog](./next/changelog.md)</kbd>
+### Next <kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/next.json)</kbd>
 
-Extends the base template and with settings from the Next.js app template.
+Extends the base template with settings from the Next.js app template.
 
 ## Versioning
 
-The package and each template are versioned separately. Seperate versioning allows you to update the package without worrying about breaking changes to the templates. It also allows you to easily test newer versions of the templates by just changing the `extends` field in the `tsconfig` file of your project.
+As of version 4.0.0, the package migrated to a single template per type. The package version is now used to determine the template version. This simplifies both the maintenance and usage of the package.
 
-### Package versioning
+The package follows the following versioning scheme: `X.Y.Z`
 
-The package itself follows the following versioning scheme: `major.minor.patch`
-
-* `major` - Base template is changed and older template versions may be removed.
-* `minor` - Non-base template is changed or added.
-* `patch` - Non-breaking changes to the templates.
-
-If you are extending a specific version of a template in your project, you can update the package without worrying about any breaking changes to your project.
-
-### Template versioning
-
-Each template is versioned separately. The versioning scheme is: `major.minor.patch`
-
-* `major` - Major overhaul of the template. Major changes to upstream templates warrant a major version on the inheriting templates.
-* `minor` - Breaking changes to the template.
-* `patch` - Non-breaking changes to the template.
-
-Each template also has a `latest` version. However, it is not recommended to extend the `latest` version in your project as it may introduce breaking changes when the package is updated.
+* `X` - Breaking changes to the base template.
+* `Y` - Breaking changes to individual, non-base templates.
+* `Z` - Minor fixes to any template.

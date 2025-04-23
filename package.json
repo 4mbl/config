@@ -1,6 +1,6 @@
 {
   "name": "@4mbl/tsconfig",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "description": "TypeScript configuration templates for various environments.",
   "type": "module",
   "author": "4mbl",
@@ -15,14 +15,7 @@
     "tsconfig"
   ],
   "scripts": {
-    "build": "node ./scripts/copyLatest.js '*'",
-    "delete:latest": "node ./scripts/deleteLatestJson.js",
-    "delete:version": "node ./scripts/deleteVersionFile.js",
-    "get:version": "node -pe \"require('./package.json')['version']\" > version.txt",
-    "release": "npm run get:version && npm install && npm run build && npm publish && npm run delete:latest && git add . && git commit --file version.txt && git push && npm run delete:version",
-    "release:patch": "npm version patch --no-git-tag-version && npm run release",
-    "release:minor": "npm version minor --no-git-tag-version && npm run release",
-    "release:major": "npm version major --no-git-tag-version && npm run release"
+    "build": "cp templates/*.json ."
   },
   "peerDependencies": {
     "typescript": ">=5.8.0"
