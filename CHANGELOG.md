@@ -5,7 +5,6 @@
 * Migrated from versioned templates to a single template per type. The package version is now used to determine the template version. This simplifies both the maintenance and usage of the package.
 * Enabled the following options in the base template:
   * `declarationMap`
-  * `composite`
   * `tsBuildInfoFile` set to `node_modules/.tmp/tsbuildinfo`
   * `verbatimModuleSyntax`
   * `allowSyntheticDefaultImports`
