@@ -1,7 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Base",
-  "_version": "3.0.0",
   "compilerOptions": {
     /* Base Options */
     "lib": ["ESNext"],
