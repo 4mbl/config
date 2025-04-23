@@ -1,3 +1,2 @@
-scripts/*
-*/changelog.md
-version.txt
+templates/*
+.github

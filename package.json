@@ -1,6 +1,6 @@
 {
   "name": "@4mbl/tsconfig",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "description": "TypeScript configuration templates for various environments.",
   "type": "module",
   "author": "4mbl",
@@ -15,14 +15,11 @@
     "tsconfig"
   ],
   "scripts": {
-    "build": "node ./scripts/copyLatest.js '*'",
-    "delete:latest": "node ./scripts/deleteLatestJson.js",
-    "delete:version": "node ./scripts/deleteVersionFile.js",
-    "get:version": "node -pe \"require('./package.json')['version']\" > version.txt",
-    "release": "npm run get:version && npm install && npm run build && npm publish && npm run delete:latest && git add . && git commit --file version.txt && git push && npm run delete:version",
-    "release:patch": "npm version patch --no-git-tag-version && npm run release",
-    "release:minor": "npm version minor --no-git-tag-version && npm run release",
-    "release:major": "npm version major --no-git-tag-version && npm run release"
+    "get-version": "npm pkg get version | sed 's/\"//g'",
+    "prep-release": "cp templates/*.json .",
+    "release": "node ./scripts/get-version.js && npm install && npm run prep-release && npm publish && git add . && git commit $(npm run get-version) && git push",
+    "release:beta": "node ./scripts/get-version.js && npm install && npm run prep-release && npm publish --tag beta && git add . && git commit $(npm run get-version) && git push",
+    "cleanup-release": "rm ./{base,browser,next,node}.json"
   },
   "peerDependencies": {
     "typescript": ">=5.8.0"
