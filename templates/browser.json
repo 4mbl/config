@@ -6,7 +6,6 @@
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "jsx": "react-jsx",
-    "tsBuildInfoFile": "tsconfig.browser.tsbuildinfo",
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "noEmit": true,

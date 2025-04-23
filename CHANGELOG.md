@@ -11,6 +11,7 @@
   * `allowSyntheticDefaultImports`
   * `noImplicitOverride`
 * In the Next.js all paths now use paths relative to the project.
+* Removed `tsBuildInfoFile` from browser template in favor of the base template value.
 
 ## 3.0.0
 
