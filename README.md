@@ -39,7 +39,7 @@ Extends the base template with settings specific to browser and React applicatio
 
 Extends the base template with settings from the Next.js app template.
 
-Next.js does not yet support tsconfig template variables, so you need to set the paths settings manually.
+[Next.js does not yet support tsconfig template variables](https://github.com/vercel/next.js/issues/70912), so you need to configure the path settings manually on the `tsconfig.json` file of your project.
 
 ```jsonc
 {
@@ -53,6 +53,8 @@ Next.js does not yet support tsconfig template variables, so you need to set the
   "exclude": ["node_modules"]
 }
 ```
+
+The Next.js template should work without extra configuration as soon as Next.js supports tsconfig template variables. Until then, you need to set the paths settings manually.
 
 ## Versioning
 
