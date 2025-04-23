@@ -23,9 +23,7 @@
     ],
     "paths": {
       "@/*": ["${configDir}/src/*"]
-    },
-    "rootDir": "${configDir}/src",
-    "baseUrl": "${configDir}"
+    }
   },
   "include": [
     "${configDir}/next-env.d.ts",

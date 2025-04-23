@@ -39,6 +39,23 @@ Extends the base template with settings specific to browser and React applicatio
 
 Extends the base template with settings from the Next.js app template.
 
+[Next.js does not yet support tsconfig template variables](https://github.com/vercel/next.js/issues/70912), so you need to configure the path settings manually on the `tsconfig.json` file of your project.
+
+```jsonc
+{
+  "extends": "@4mbl/tsconfig/next",
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+```
+
+The Next.js template should work without extra configuration as soon as Next.js supports tsconfig template variables. Until then, you need to set the paths settings manually.
+
 ## Versioning
 
 As of version 4.0.0, the package migrated to a single template per type. The package version is now used to determine the template version. This simplifies both the maintenance and usage of the package.
