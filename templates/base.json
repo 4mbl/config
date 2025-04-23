@@ -18,7 +18,6 @@
     "outDir": "${configDir}/dist",
     "sourceMap": true,
     "declarationMap": true,
-    "composite": true,
     "declaration": true,
     "incremental": true,
     "isolatedModules": true,
