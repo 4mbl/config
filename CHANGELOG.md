@@ -1,5 +1,9 @@
 # @4mbl/tsconfig Changelog
 
+## 4.0.1
+
+* Move `baseUrl` definition from the base template to child templates to improve Next.js support.
+
 ## 4.0.0
 
 * Migrated from versioned templates to a single template per type. The package version is now used to determine the template version. This simplifies both the maintenance and usage of the package.
