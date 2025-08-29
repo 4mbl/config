@@ -1,5 +1,9 @@
 # @4mbl/tsconfig Changelog
 
+## 4.1.0
+
+* Add vite-react template.
+
 ## 4.0.1
 
 * Move `baseUrl` definition from the base template to child templates to improve Next.js support.
