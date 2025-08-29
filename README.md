@@ -1,6 +1,17 @@
 # @4mbl/tsconfig
 
-> TypeScript configuration templates for various environments.
+> Strict TypeScript configuration for various environments.
+
+* [Usage](#usage)
+* [Available templates](#available-templates)
+  * [Base (tsconfig)](#base-tsconfig)
+  * [Node (tsconfig)](#node-tsconfig)
+  * [Browser (tsconfig)](#browser-tsconfig)
+  * [Next (tsconfig)](#next-tsconfig)
+  * [Vite React (app | node)](#vite-react-app--node)
+* [Versioning](#versioning)
+
+---
 
 ## Usage
 
@@ -15,31 +26,31 @@ Create a `tsconfig.json` file in the root of your project and extend the desired
 ```jsonc
 {
   "extends": "@4mbl/tsconfig/node"
-  /* your custom settings */
+  // your custom configuration...
 }
 ```
 
 ## Available templates
 
-There are currently four `tsconfig` templates.
+There are currently five `tsconfig` templates.
 
-### Base <kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/base.json)</kbd>
+### Base (<kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/base.json)</kbd>)
 
-This is the base `tsconfig` file that is used by the other templates. It contains common configuration for TypeScript with minimal environment specific settings.
+This is the base `tsconfig` file that is used by the other templates. It contains common configuration for TypeScript with minimal environment specific configuration.
 
-### Node <kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/node.json)</kbd>
+### Node (<kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/node.json)</kbd>)
 
-Extends the base template with settings specific to Node.js.
+Extends the base template with configuration specific to Node.js.
 
-### Browser <kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/browser.json)</kbd>
+### Browser (<kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/browser.json)</kbd>)
 
-Extends the base template with settings specific to browser and React applications.
+Extends the base template with configuration specific to browser and React applications.
 
-### Next <kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/next.json)</kbd>
+### Next (<kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/next.json)</kbd>)
 
-Extends the base template with settings from the Next.js app template.
+Extends the base template with configuration from the Next.js app template.
 
-[Next.js does not yet support tsconfig template variables](https://github.com/vercel/next.js/issues/70912), so you need to configure the path settings manually on the `tsconfig.json` file of your project.
+[Next.js does not yet support tsconfig template variables](https://github.com/vercel/next.js/issues/70912), so you need to override the paths manually on the `tsconfig.json` file of your project.
 
 ```jsonc
 {
@@ -54,7 +65,39 @@ Extends the base template with settings from the Next.js app template.
 }
 ```
 
-The Next.js template should work without extra configuration as soon as Next.js supports tsconfig template variables. Until then, you need to set the paths settings manually.
+### Vite React (<kbd>[app](https://unpkg.com/@4mbl/tsconfig@latest/vite-react/app.json)</kbd> | <kbd>[node](https://unpkg.com/@4mbl/tsconfig@latest/vite-react/node.json)</kbd>)
+
+Extends the base template with configuration from Vite's `react-ts` preset.
+
+Vite uses seperate `tsconfig` files for the application and the node environment. So you need to have three files in total:
+
+**`tsconfig.json`**
+
+```jsonc
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}
+```
+
+**`tsconfig.app.json`**
+
+```jsonc
+{
+  "extends": "@4mbl/tsconfig/vite-react/app"
+}
+```
+
+**`tsconfig.node.json`**
+
+```jsonc
+{
+  "extends": "@4mbl/tsconfig/vite-react/node"
+}
+```
 
 ## Versioning
 
@@ -63,5 +106,5 @@ As of version 4.0.0, the package migrated to a single template per type. The pac
 The package follows the following versioning scheme: `X.Y.Z`
 
 * `X` - Breaking changes to the base template.
-* `Y` - Breaking changes to individual, non-base templates.
+* `Y` - Breaking changes to individual, non-base templates. New templates may be introduced.
 * `Z` - Minor fixes to any template.
