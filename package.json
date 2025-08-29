@@ -15,7 +15,7 @@
     "tsconfig"
   ],
   "scripts": {
-    "build": "cp templates/*.json ."
+    "build": "cp -r templates/* ."
   },
   "peerDependencies": {
     "typescript": ">=5.8.0"
