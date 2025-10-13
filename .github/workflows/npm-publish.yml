@@ -1,6 +1,11 @@
-name: Publish to npm - stable
+name: Publish to npm
 
 on:
+  # beta release trigger
+  push:
+    branches:
+      - main
+  # stable release trigger
   release:
     types: [created]
 
