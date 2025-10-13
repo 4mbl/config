@@ -18,7 +18,6 @@ jobs:
 
       - name: Setup node
         uses: actions/setup-node@v4
-
         with:
           node-version: ${{ env.NODE_VERSION }}
           registry-url: 'https://registry.npmjs.org'
@@ -29,5 +28,15 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Publish to npm
+      - name: Publish to npm - beta
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          SHORT_SHA=$(git rev-parse --short HEAD)
+          BETA_VERSION="0.0.0-beta.$SHORT_SHA"
+          echo "Setting version to $BETA_VERSION"
+          npm version "$BETA_VERSION" --no-git-tag-version
+          npm publish --tag beta
+
+      - name: Publish to npm - stable
+        if: github.event_name == 'release' && github.event.action == 'created'
         run: npm publish
