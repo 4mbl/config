@@ -1,5 +1,13 @@
 # @4mbl/tsconfig Changelog
 
+## 4.1.2
+
+* Setup npm trusted publishing. No changes to the package itself.
+
+## 4.1.1
+
+* Fixed missing artifacts in the previous release.
+
 ## 4.1.0
 
 * Add vite-react template.
