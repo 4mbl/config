@@ -21,7 +21,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/4mbl/tsconfig.git"
+    "url": "git+https://github.com/4mbl/tsconfig.git",
+    "directory": "packages/tsconfig"
   },
   "keywords": [
     "typescript",
