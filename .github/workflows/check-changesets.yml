@@ -4,42 +4,10 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
-env:
-  MESSAGE: 'Hey! Remember to add a changeset with `pnpm changeset add` to describe your changes for versioning.'
-
 jobs:
   check-changesets:
     if: github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
-
-      - name: Check if a comment already exists
-        id: check_comment
-        run: |
-          PR_NUMBER=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
-          echo "pr_number=$PR_NUMBER" >> "$GITHUB_ENV"
-
-          COMMENTS=$(gh pr view "$PR_NUMBER" --json comments -q ".comments[] | select(.body | index(\"${MESSAGE}\")) | .id")
-
-          if [ -n "$COMMENTS" ]; then
-            echo "comment_exists=true" >> "$GITHUB_ENV"
-
-            echo "comment_id<<EOF" >> "$GITHUB_ENV"
-            echo "$COMMENTS" >> "$GITHUB_ENV"
-            echo "EOF" >> "$GITHUB_ENV"
-          else
-            echo "comment_exists=false" >> "$GITHUB_ENV"
-          fi
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Add comment if no comment posted
-        if: env.comment_exists == 'false'
-        run: |
-          gh pr comment ${{ env.pr_number }} --body "$COMMENT_BODY"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          COMMENT_BODY: ${{ env.MESSAGE }}
+      - name: Changeset reminder comment
+        uses: 4mbl/actions/changeset/pr-comment
