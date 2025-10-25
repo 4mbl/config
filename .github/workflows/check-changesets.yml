@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Changeset reminder comment
-        uses: 4mbl/actions/changeset/pr-comment@706eb27d1f966ceeabed0a20241c99248bb6eaa7 # v1
+        uses: 4mbl/actions/changeset/pr-comment@213bee35cab862eab25f5a7a0ae6dbc705a20919 # v1
