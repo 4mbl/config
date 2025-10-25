@@ -5,7 +5,7 @@ on:
     types: [opened, synchronize, reopened]
 
 env:
-  MESSAGE: 'Hey! Remember to add a changeset with `pnpm changeset add` to describe your changes for versioning.'
+  MESSAGE: 'Hey! Remember to add a changeset with \`pnpm changeset add\` to describe your changes for versioning.'
 
 jobs:
   check-changesets:
