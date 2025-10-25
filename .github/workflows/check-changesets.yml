@@ -39,7 +39,7 @@ jobs:
       - name: Add comment if no comment posted
         if: env.comment_exists == 'false'
         run: |
-          gh pr comment ${{ env.pr_number }} --body "${{ env.COMMENT_BODY }}"
+          gh pr comment ${{ env.pr_number }} --body "$COMMENT_BODY"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COMMENT_BODY: ${{ env.MESSAGE }}
