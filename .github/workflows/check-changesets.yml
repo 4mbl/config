@@ -4,6 +4,9 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
+env:
+  MESSAGE: 'Hey! Remember to add a changeset with \\`pnpm changeset add\\` to describe your changes for versioning.'
+
 jobs:
   check-changesets:
     if: github.actor != 'dependabot[bot]'
@@ -18,7 +21,7 @@ jobs:
         run: |
           PR_NUMBER=$(jq --raw-output .pull_request.number $GITHUB_EVENT_PATH)
           echo "pr_number='$PR_NUMBER'" >> $GITHUB_ENV
-          COMMENTS=$(gh pr view $PR_NUMBER --json comments -q '.comments[] | select(.body | test("^Hey! Remember to add a changeset with \\`npx changeset\\` to describe your changes for versioning.")) | .id')
+          COMMENTS=$(gh pr view $PR_NUMBER --json comments -q '.comments[] | select(.body | test("^{{ env.MESSAGE }}")) | .id')
           if [ -n "$COMMENTS" ]; then
             echo "comment_exists=true" >> $GITHUB_ENV
             echo "comment_id='$COMMENTS'" >> $GITHUB_ENV
@@ -34,4 +37,4 @@ jobs:
           gh pr comment ${{ env.pr_number }} --body "${{ env.COMMENT_BODY }}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          COMMENT_BODY: "Hey! Remember to add a changeset with \\`npx changeset\\` to describe your changes for versioning."
+          COMMENT_BODY: ${{ env.MESSAGE }}
