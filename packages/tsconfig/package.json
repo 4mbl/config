@@ -1,0 +1,42 @@
+{
+  "name": "@4mbl/tsconfig",
+  "version": "4.1.2",
+  "description": "Strict TypeScript configuration for various environments.",
+  "type": "module",
+  "author": "4mbl",
+  "license": "MIT",
+  "homepage": "https://github.com/4mbl/tsconfig#readme",
+  "exports": {
+    "./browser": "./dist/browser.json",
+    "./next": "./dist/next.json",
+    "./node": "./dist/node.json",
+    "./vite-react/app": "./dist/vite-react/app.json",
+    "./vite-react/node": "./dist/vite-react/node.json"
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4mbl/tsconfig.git",
+    "directory": "packages/tsconfig"
+  },
+  "keywords": [
+    "typescript",
+    "tsconfig"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && mkdir dist && cp -r templates/* dist/ && node scripts/generate-exports.mjs"
+  },
+  "peerDependencies": {
+    "typescript": ">=5.8.0"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  }
+}
