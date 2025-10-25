@@ -19,14 +19,19 @@ jobs:
       - name: Check if a comment already exists
         id: check_comment
         run: |
-          PR_NUMBER=$(jq --raw-output .pull_request.number $GITHUB_EVENT_PATH)
-          echo "pr_number=$PR_NUMBER" >> $GITHUB_ENV
+          PR_NUMBER=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
+          echo "pr_number=$PR_NUMBER" >> "$GITHUB_ENV"
+
           COMMENTS=$(gh pr view "$PR_NUMBER" --json comments -q ".comments[] | select(.body | index(\"${MESSAGE}\")) | .id")
+
           if [ -n "$COMMENTS" ]; then
-            echo "comment_exists=true" >> $GITHUB_ENV
-            echo "comment_id=$COMMENTS" >> $GITHUB_ENV
+            echo "comment_exists=true" >> "$GITHUB_ENV"
+
+            echo "comment_id<<EOF" >> "$GITHUB_ENV"
+            echo "$COMMENTS" >> "$GITHUB_ENV"
+            echo "EOF" >> "$GITHUB_ENV"
           else
-            echo "comment_exists=false" >> $GITHUB_ENV
+            echo "comment_exists=false" >> "$GITHUB_ENV"
           fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
