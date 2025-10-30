@@ -6,7 +6,6 @@ on:
       - '**'
   pull_request:
     types: [opened, synchronize, reopened]
-    branches: ['changeset-release/main']
   workflow_dispatch:
 
 env:
@@ -18,6 +17,7 @@ concurrency:
 
 jobs:
   ci:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && startsWith(github.head_ref, 'changeset-release/'))
     timeout-minutes: 10
     name: CI
     runs-on: ubuntu-latest
