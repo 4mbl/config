@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   ci:
-    if: startsWith(github.head_ref, 'changeset-release//')
+    if: startsWith(github.head_ref, 'changeset-release/')
     timeout-minutes: 10
     name: CI
     runs-on: ubuntu-latest
