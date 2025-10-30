@@ -1,0 +1,35 @@
+{
+  "name": "@4mbl/lint",
+  "version": "0.0.0",
+  "description": "Linting configuration for various environments.",
+  "type": "module",
+  "author": "4mbl",
+  "license": "MIT",
+  "homepage": "https://github.com/4mbl/config/tree/main/packages/lint#readme",
+  "exports": {
+    "./next": "./src/next.ts"
+  },
+  "files": [
+    "src",
+    "package.json",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4mbl/config.git",
+    "directory": "packages/lint"
+  },
+  "keywords": [
+    "lint"
+  ],
+  "scripts": {},
+  "devDependencies": {
+    "@eslint/js": "^9.38.0",
+    "eslint": "^9.38.0",
+    "eslint-config-next": "^16.0.1",
+    "eslint-plugin-react-compiler": "19.1.0-rc.2",
+    "jiti": "^2.6.1",
+    "typescript-eslint": "^8.46.2"
+  }
+}
