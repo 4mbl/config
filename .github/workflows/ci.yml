@@ -6,6 +6,7 @@ on:
       - '**'
   pull_request:
     types: [opened, synchronize, reopened]
+    branches: ['changeset-release/*']
   workflow_dispatch:
 
 env:
