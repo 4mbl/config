@@ -6,6 +6,7 @@ import * as reactCompiler from 'eslint-plugin-react-compiler';
 import { defineConfig, globalIgnores, Config } from 'eslint/config';
 import tseslint from 'typescript-eslint';
 import prettier from 'eslint-config-prettier/flat';
+import reactHooks from 'eslint-plugin-react-hooks';
 
 export { Config };
 
@@ -21,6 +22,7 @@ export default defineConfig([
   },
   ...nextVitals,
   ...nextTs,
+  reactHooks.configs.recommended,
   reactCompiler.configs.recommended,
   {
     rules: {
