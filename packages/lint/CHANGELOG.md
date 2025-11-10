@@ -1,5 +1,12 @@
 # @4mbl/lint
 
+## 0.2.0
+
+### Minor Changes
+
+- c4e49f3: Add eslint-plugin-react-hooks
+- c4e49f3: Add eslint-config-prettier
+
 ## 0.1.1
 
 ### Patch Changes
