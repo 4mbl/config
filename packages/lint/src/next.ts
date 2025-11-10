@@ -22,7 +22,7 @@ export default defineConfig([
   },
   ...nextVitals,
   ...nextTs,
-  reactHooks.configs.recommended,
+  reactHooks.configs.flat.recommended,
   reactCompiler.configs.recommended,
   {
     rules: {
