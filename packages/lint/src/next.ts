@@ -5,6 +5,8 @@ import nextTs from 'eslint-config-next/typescript';
 import * as reactCompiler from 'eslint-plugin-react-compiler';
 import { defineConfig, globalIgnores, Config } from 'eslint/config';
 import tseslint from 'typescript-eslint';
+import prettier from 'eslint-config-prettier/flat';
+import reactHooks from 'eslint-plugin-react-hooks';
 
 export { Config };
 
@@ -20,11 +22,13 @@ export default defineConfig([
   },
   ...nextVitals,
   ...nextTs,
-  globalIgnores(['.next/**', 'out/**', 'build/**', 'next-env.d.ts']),
+  reactHooks.configs.recommended,
   reactCompiler.configs.recommended,
   {
     rules: {
       'react-compiler/react-compiler': 'error',
     },
   },
+  prettier,
+  globalIgnores(['.next/**', 'out/**', 'build/**', 'next-env.d.ts']),
 ]) satisfies Config[];
