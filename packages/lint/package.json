@@ -1,6 +1,6 @@
 {
   "name": "@4mbl/lint",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Linting configuration for various environments.",
   "type": "module",
   "author": "4mbl",
