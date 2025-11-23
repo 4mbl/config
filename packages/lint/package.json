@@ -8,6 +8,7 @@
   "homepage": "https://github.com/4mbl/config/tree/main/packages/lint#readme",
   "exports": {
     "./next": "./src/next.ts",
+    "./node": "./src/node.ts",
     "./react": "./src/react.ts"
   },
   "files": [
