@@ -7,7 +7,8 @@
   "license": "MIT",
   "homepage": "https://github.com/4mbl/config/tree/main/packages/lint#readme",
   "exports": {
-    "./next": "./src/next.ts"
+    "./next": "./src/next.ts",
+    "./react": "./src/react.ts"
   },
   "files": [
     "src",
