@@ -1,5 +1,12 @@
 # @4mbl/lint
 
+## 0.3.0
+
+### Minor Changes
+
+- 6d969e6: Add react template
+- 6d969e6: Upgrade eslint and config dependencies
+
 ## 0.2.1
 
 ### Patch Changes
