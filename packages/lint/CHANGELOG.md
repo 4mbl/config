@@ -1,5 +1,11 @@
 # @4mbl/lint
 
+## 0.3.1
+
+### Patch Changes
+
+- d17fc69: Fix react template export
+
 ## 0.3.0
 
 ### Minor Changes
