@@ -10,7 +10,7 @@
 
 ## Usage
 
-Install the [`@4mbl/lint`](https://www.npmjs.com/package/@4mbl/lint) npm package.
+Install the [`@4mbl/lint`](https://www.npmjs.com/package/@4mbl/lint) package.
 
 ```shell
 npm install -D @4mbl/lint
@@ -22,6 +22,21 @@ Create a `eslint.config.ts` file in the root of your project with the desired co
 import defaultConfig, { type Config } from '@4mbl/lint/next'; // <-- change `next` to the desired template
 
 export default [...defaultConfig] satisfies Config[];
+```
+
+Set a script that uses the linting package.
+
+```shell
+npm pkg set scripts.lint="eslint src"
+```
+
+You may need to explicitly allow the underlying linting packages to be used by your scripts.
+
+For example, when using pnpm, you need to set `publicHoistPattern` in your `pnpm-workspace.yaml` for ESLint.
+
+```yaml
+publicHoistPattern:
+  - eslint
 ```
 
 ## Available templates
