@@ -1,5 +1,11 @@
 # @4mbl/lint
 
+## 0.3.2
+
+### Patch Changes
+
+- df1c48b: Re-export eslint Config type from react template
+
 ## 0.3.1
 
 ### Patch Changes
