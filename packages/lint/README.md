@@ -43,8 +43,9 @@ publicHoistPattern:
 
 There is currently one config template.
 
-- **Next** - Linting configuration extending the Next.js default config.
-- **React** - Linting configuration extending the Vite-React default config.
+- **Next** - Extending the Next.js linting config.
+- **Node** - Linting configuration for Node.js.
+- **React** - Extending the Vite-React linting config.
 
 ## Versioning
 
