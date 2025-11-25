@@ -6,7 +6,7 @@ import { defineConfig, globalIgnores, type Config } from 'eslint/config';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
-export { Config };
+export { Config, defineConfig };
 
 export default defineConfig([
   js.configs.recommended,
@@ -31,4 +31,4 @@ export default defineConfig([
   },
 
   prettier,
-]);
+]) satisfies Config[];

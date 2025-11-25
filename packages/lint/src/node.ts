@@ -3,7 +3,7 @@ import { defineConfig, globalIgnores, type Config } from 'eslint/config';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
-export { Config };
+export { Config, defineConfig };
 
 export default defineConfig([
   globalIgnores(['dist/**']),
@@ -11,4 +11,4 @@ export default defineConfig([
   { languageOptions: { globals: globals.node } },
   js.configs.recommended,
   ...tseslint.configs.recommended,
-]);
+]) satisfies Config[];

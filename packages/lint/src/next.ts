@@ -8,7 +8,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import { Config, defineConfig, globalIgnores } from 'eslint/config';
 import tseslint from 'typescript-eslint';
 
-export { Config };
+export { Config, defineConfig };
 
 export default defineConfig([
   js.configs.recommended,
