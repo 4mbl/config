@@ -19,9 +19,9 @@ npm install -D @4mbl/lint
 Create a `eslint.config.ts` file in the root of your project with the desired configuration. This package currently uses eslint. That might change in a future major release.
 
 ```js
-import defaultConfig, { type Config } from '@4mbl/lint/next'; // <-- change `next` to the desired template
+import defaultConfig, { defineConfig } from '@4mbl/lint/next'; // <-- change `next` to the desired template
 
-export default [...defaultConfig] satisfies Config[];
+export default defineConfig([...defaultConfig]);
 ```
 
 Set a script that uses the linting package.
