@@ -1,5 +1,12 @@
 # @4mbl/lint
 
+## 0.5.0
+
+### Minor Changes
+
+- 55c3db6: Export `defineConfig` from eslint
+- f7d30bb: Upgrade config dependencies
+
 ## 0.4.0
 
 ### Minor Changes
