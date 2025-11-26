@@ -1,5 +1,11 @@
 # @4mbl/tsconfig Changelog
 
+## 4.2.0
+
+### Minor Changes
+
+- 090f642: Add node-ts template.
+
 ## 4.1.3
 
 ### Patch Changes
