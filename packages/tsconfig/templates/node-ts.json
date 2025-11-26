@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Node (TS)",
+  "extends": "./base.json",
+  "compilerOptions": {
+    // same options as node template
+    "target": "ESNext",
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext",
+    "baseUrl": "${configDir}/src",
+
+    // options for typescript-only
+    "noEmit": true,
+    "allowImportingTsExtensions": true
+  }
+}

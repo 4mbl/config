@@ -41,7 +41,7 @@ publicHoistPattern:
 
 ## Available templates
 
-There is currently one config template.
+These are the currently available config templates.
 
 - **Next** - Extending the Next.js linting config.
 - **Node** - Linting configuration for Node.js.

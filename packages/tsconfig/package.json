@@ -9,6 +9,7 @@
   "exports": {
     "./browser": "./dist/browser.json",
     "./next": "./dist/next.json",
+    "./node-ts": "./dist/node-ts.json",
     "./node": "./dist/node.json",
     "./vite-react/app": "./dist/vite-react/app.json",
     "./vite-react/node": "./dist/vite-react/node.json"
