@@ -6,6 +6,7 @@
 * [Available templates](#available-templates)
   * [Base (tsconfig)](#base-tsconfig)
   * [Node (tsconfig)](#node-tsconfig)
+  * [Node-TS (tsconfig)](#node-ts-tsconfig)
   * [Browser (tsconfig)](#browser-tsconfig)
   * [Next (tsconfig)](#next-tsconfig)
   * [Vite React (app | node)](#vite-react-app--node)
@@ -32,7 +33,7 @@ Create a `tsconfig.json` file in the root of your project and extend the desired
 
 ## Available templates
 
-There are currently five `tsconfig` templates.
+These are the currently available `tsconfig` templates.
 
 ### Base (<kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/base.json)</kbd>)
 
@@ -41,6 +42,10 @@ This is the base `tsconfig` file that is used by the other templates. It contain
 ### Node (<kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/node.json)</kbd>)
 
 Extends the base template with configuration specific to Node.js.
+
+### Node-TS (<kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/node-ts.json)</kbd>)
+
+Extends the node template with configuration for TypeScript-only projects.
 
 ### Browser (<kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/browser.json)</kbd>)
 
@@ -105,6 +110,6 @@ As of version 4.0.0, the package migrated to a single template per type. The pac
 
 The package follows the following versioning scheme: `X.Y.Z`
 
-* `X` - Breaking changes to the base template.
-* `Y` - Breaking changes to individual, non-base templates. New templates may be introduced.
-* `Z` - Minor fixes to any template.
+- `X` - Breaking changes to the base template.
+- `Y` - Breaking changes to individual, non-base templates. New templates may be introduced.
+- `Z` - Minor fixes to any template.
