@@ -1,5 +1,11 @@
 # @4mbl/tsconfig Changelog
 
+## 4.3.0
+
+### Minor Changes
+
+- ce274df: node-ts: add rewriteRelativeImportExtensions
+
 ## 4.2.0
 
 ### Minor Changes
