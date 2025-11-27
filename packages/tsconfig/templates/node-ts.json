@@ -10,7 +10,9 @@
     "baseUrl": "${configDir}/src",
 
     // options for typescript-only
+    // https://nodejs.org/api/typescript.html#type-stripping
     "noEmit": true,
-    "allowImportingTsExtensions": true
+    "allowImportingTsExtensions": true,
+    "rewriteRelativeImportExtensions": true
   }
 }
