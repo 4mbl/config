@@ -12,7 +12,7 @@
   "keywords": [],
   "packageManager": "pnpm@10.13.1",
   "devDependencies": {
-    "@changesets/cli": "^2.29.7",
+    "@changesets/cli": "^2.29.8",
     "turbo": "^2.6.1"
   }
 }
