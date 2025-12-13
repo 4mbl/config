@@ -1,6 +1,6 @@
 {
   "name": "@4mbl/tsconfig",
-  "version": "4.3.0",
+  "version": "4.4.0",
   "description": "Strict TypeScript configuration for various environments.",
   "type": "module",
   "author": "4mbl",
