@@ -1,5 +1,11 @@
 # @4mbl/tsconfig Changelog
 
+## 4.4.0
+
+### Minor Changes
+
+- 05ab9ba: [browser,node,node-ts] Replace `baseUrl` with `paths` catch-all to improve TypeScript 7 support.
+
 ## 4.3.0
 
 ### Minor Changes
