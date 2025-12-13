@@ -7,7 +7,7 @@
     "target": "ESNext",
     "moduleResolution": "NodeNext",
     "module": "NodeNext",
-    "baseUrl": "${configDir}/src",
+    "paths": { "*": ["${configDir}/src/*"] },
 
     // options for typescript-only
     // https://nodejs.org/api/typescript.html#type-stripping

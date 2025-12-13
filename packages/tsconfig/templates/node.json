@@ -6,6 +6,6 @@
     "target": "ESNext",
     "moduleResolution": "NodeNext",
     "module": "NodeNext",
-    "baseUrl": "${configDir}/src"
+    "paths": { "*": ["${configDir}/src/*"] }
   }
 }
