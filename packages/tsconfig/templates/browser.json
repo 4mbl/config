@@ -7,7 +7,7 @@
     "jsx": "react-jsx",
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "baseUrl": "${configDir}/src",
+    "paths": { "*": ["${configDir}/src/*"] },
     "noEmit": true,
     "sourceMap": true
   }
