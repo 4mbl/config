@@ -1,5 +1,15 @@
 # @4mbl/lint
 
+## 0.7.0
+
+### Minor Changes
+
+- 8e46d6b: Upgrade config dependencies
+
+### Patch Changes
+
+- 8e46d6b: Re-export types with type-keyword to fix verbatimModuleSyntax
+
 ## 0.6.0
 
 ### Minor Changes
