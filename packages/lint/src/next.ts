@@ -5,10 +5,10 @@ import nextTs from 'eslint-config-next/typescript';
 import prettier from 'eslint-config-prettier/flat';
 import * as reactCompiler from 'eslint-plugin-react-compiler';
 import reactHooks from 'eslint-plugin-react-hooks';
-import { Config, defineConfig, globalIgnores } from 'eslint/config';
+import { type Config, defineConfig, globalIgnores } from 'eslint/config';
 import tseslint from 'typescript-eslint';
 
-export { Config, defineConfig };
+export { type Config, defineConfig };
 
 export default defineConfig([
   js.configs.recommended,
