@@ -1,0 +1,33 @@
+name: Create changeset for updating linting configs
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  main:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+      - name: Create changeset
+        run: |
+          FILE_PATH=".changeset/lint-config-deps.md"
+          echo "---" > $FILE_PATH
+          echo '"@4mbl/lint": minor' >> $FILE_PATH
+          echo "---" >> $FILE_PATH
+          echo "" >> $FILE_PATH
+          echo "Upgrade config dependencies" >> $FILE_PATH
+
+          git switch -c create-config-deps-changeset
+          git add $FILE_PATH
+          git commit -m "chore: create changeset for config deps"
+          git push origin HEAD
+          gh pr create --title "chore: create changeset for config deps" --body "Created by GitHub Actions"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
