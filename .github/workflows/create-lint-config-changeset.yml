@@ -33,7 +33,7 @@ jobs:
           git add $FILE_PATH
           git commit -m "chore: create changeset for config deps"
           git push origin HEAD
-          gh pr create --title "chore: create changeset for config deps" --body "Created by GitHub Actions"
+          gh pr create --title "chore: create changeset for config deps" --body ""
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
