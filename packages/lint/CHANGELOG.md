@@ -1,5 +1,11 @@
 # @4mbl/lint
 
+## 0.9.0
+
+### Minor Changes
+
+- aee78b7: Upgrade config dependencies
+
 ## 0.8.0
 
 ### Minor Changes
