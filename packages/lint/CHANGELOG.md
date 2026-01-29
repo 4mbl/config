@@ -1,5 +1,11 @@
 # @4mbl/lint
 
+## 0.12.0
+
+### Minor Changes
+
+- dd16619: Upgrade config dependencies
+
 ## 0.11.0
 
 ### Minor Changes
