@@ -1,5 +1,11 @@
 # @4mbl/lint
 
+## 0.13.0
+
+### Minor Changes
+
+- ac23f1d: Upgrade config dependencies
+
 ## 0.12.0
 
 ### Minor Changes
