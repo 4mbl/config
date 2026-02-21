@@ -1,5 +1,12 @@
 # @4mbl/lint
 
+## 0.14.0
+
+### Minor Changes
+
+- 794dbfb: Upgrade config dependencies
+- e6a08fd: Upgrade to ESLint 10
+
 ## 0.13.0
 
 ### Minor Changes
