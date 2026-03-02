@@ -1,5 +1,11 @@
 # @4mbl/lint
 
+## 0.15.0
+
+### Minor Changes
+
+- 5040323: Upgrade config dependencies
+
 ## 0.14.0
 
 ### Minor Changes
