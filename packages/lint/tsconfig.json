@@ -1,14 +1,3 @@
 {
-  "extends": "@4mbl/tsconfig/node",
-  "compilerOptions": {
-    "allowImportingTsExtensions": true,
-
-    // https://nodejs.org/api/typescript.html#type-stripping
-    "noEmit": true,
-    "target": "esnext",
-    "module": "nodenext",
-    "rewriteRelativeImportExtensions": true,
-    "erasableSyntaxOnly": true,
-    "verbatimModuleSyntax": true
-  }
+  "extends": "@4mbl/tsconfig/node"
 }

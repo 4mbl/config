@@ -1,5 +1,5 @@
 import { defineConfig, type OxlintConfig } from 'oxlint';
-import base from './base.ts';
+import base from './base.js';
 
 type NodeOptions = {};
 
