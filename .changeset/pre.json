@@ -1,0 +1,9 @@
+{
+  "mode": "pre",
+  "tag": "beta",
+  "initialVersions": {
+    "@4mbl/lint": "0.16.0",
+    "@4mbl/tsconfig": "4.4.0"
+  },
+  "changesets": []
+}
