@@ -1,5 +1,16 @@
 # @4mbl/lint
 
+## 1.0.0-beta.2
+
+### Minor Changes
+
+- ba4500a: Use named exports for config templates
+- ba4500a: Re-export oxlint defineConfig
+
+### Patch Changes
+
+- 2b77e08: fix(lint): transpile configs to support usage from node_modules
+
 ## 1.0.0-beta.1
 
 ### Patch Changes
