@@ -39,7 +39,7 @@ Set a script that uses the linting CLI wrapper in your `package.json`. While it 
 npm pkg set scripts.lint="lint"
 ```
 
-The CLI wrapper uses the following default arguments:
+The CLI wrapper uses the `src` directory by default and the following arguments:
 
 - `--max-warnings=0`
 - `--report-unused-disable-directives`
