@@ -1,5 +1,11 @@
 # @4mbl/lint
 
+## 1.0.0-beta.1
+
+### Patch Changes
+
+- 2c338b1: fix(lint): re-export `OxlintConfig` to make config portable
+
 ## 1.0.0-beta.0
 
 ### Major Changes
