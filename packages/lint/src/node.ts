@@ -1,15 +1,19 @@
 import { defineConfig, type OxlintConfig } from 'oxlint';
-import base from './base.js';
+import { baseConfig } from './base.js';
 
 type NodeOptions = {};
 
 // const DEFAULT_OPTIONS: NodeOptions = {};
 
-export default function (_options?: Partial<NodeOptions>) {
+function nodeConfig(_options?: Partial<NodeOptions>) {
   // const opts = { ...DEFAULT_OPTIONS, ...options };
+
   return defineConfig({
-    extends: [base()],
+    extends: [baseConfig()],
+    env: {
+      node: true,
+    },
   });
 }
 
-export type { OxlintConfig };
+export { type OxlintConfig, defineConfig, nodeConfig };
