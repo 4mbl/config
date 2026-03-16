@@ -1,15 +1,15 @@
 import { defineConfig, type OxlintConfig } from 'oxlint';
-import base from './base.js';
+import { baseConfig } from './base.js';
 
 export type ReactOptions = {};
 
 // const DEFAULT_OPTIONS: ReactOptions = {};
 
-export default function (_options?: Partial<ReactOptions>) {
+function reactConfig(_options?: Partial<ReactOptions>) {
   // const opts = { ...DEFAULT_OPTIONS, ...options };
 
   return defineConfig({
-    extends: [base()],
+    extends: [baseConfig()],
     plugins: ['react'],
     jsPlugins: [
       { name: 'react-hooks-js', specifier: 'eslint-plugin-react-hooks' },
@@ -73,4 +73,4 @@ export default function (_options?: Partial<ReactOptions>) {
   });
 }
 
-export type { OxlintConfig };
+export { type OxlintConfig, defineConfig, reactConfig };

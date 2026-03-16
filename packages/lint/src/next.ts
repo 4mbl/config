@@ -1,5 +1,5 @@
 import { defineConfig, type OxlintConfig } from 'oxlint';
-import react, { type ReactOptions } from './react.js';
+import { type ReactOptions, reactConfig } from './react.js';
 import reactRefresh from 'eslint-plugin-react-refresh';
 
 type NextOptions = ReactOptions & {
@@ -16,11 +16,11 @@ type NextOptions = ReactOptions & {
 
 const DEFAULT_OPTIONS: NextOptions = { uiPath: 'src/components/ui/' };
 
-export default function (options?: Partial<NextOptions>) {
+function nextConfig(options?: Partial<NextOptions>) {
   const opts = { ...DEFAULT_OPTIONS, ...options };
 
   return defineConfig({
-    extends: [react(options)],
+    extends: [reactConfig(options)],
     plugins: ['nextjs'],
     rules: {
       '@next/next/google-font-display': 'warn',
@@ -78,4 +78,4 @@ export default function (options?: Partial<NextOptions>) {
   });
 }
 
-export type { OxlintConfig };
+export { type OxlintConfig, defineConfig, nextConfig };
