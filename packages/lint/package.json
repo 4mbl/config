@@ -11,6 +11,9 @@
     "./node": "./src/node.ts",
     "./react": "./src/react.ts"
   },
+  "bin": {
+    "lint": "./bin/cli.js"
+  },
   "files": [
     "src",
     "package.json",
