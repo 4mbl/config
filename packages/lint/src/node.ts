@@ -1,4 +1,4 @@
-import { defineConfig } from 'oxlint';
+import { defineConfig, type OxlintConfig } from 'oxlint';
 import base from './base.ts';
 
 type NodeOptions = {};
@@ -11,3 +11,5 @@ export default function (_options?: Partial<NodeOptions>) {
     extends: [base()],
   });
 }
+
+export type { OxlintConfig };

@@ -1,4 +1,4 @@
-import { defineConfig } from 'oxlint';
+import { defineConfig, type OxlintConfig } from 'oxlint';
 
 type BaseOptions = {
   uiPath: string;
@@ -130,3 +130,5 @@ export default function (_options?: Partial<BaseOptions>) {
     ],
   });
 }
+
+export type { OxlintConfig };
