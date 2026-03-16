@@ -28,7 +28,9 @@
   "keywords": [
     "lint"
   ],
-  "scripts": {},
+  "scripts": {
+    "build": "tsc --noEmit"
+  },
   "dependencies": {
     "eslint-plugin-react-compiler": "19.1.0-rc.2",
     "eslint-plugin-react-hooks": "^7.0.1",
@@ -37,5 +39,8 @@
     "jiti": "^2.6.1",
     "oxlint": "^1.56.0",
     "oxlint-tsgolint": "^0.17.0"
+  },
+  "devDependencies": {
+    "@4mbl/tsconfig": "workspace:*"
   }
 }

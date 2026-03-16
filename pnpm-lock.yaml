@@ -38,6 +38,10 @@ importers:
       oxlint-tsgolint:
         specifier: ^0.17.0
         version: 0.17.0
+    devDependencies:
+      '@4mbl/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
 
   packages/tsconfig:
     dependencies:
