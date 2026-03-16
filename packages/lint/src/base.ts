@@ -66,6 +66,7 @@ export default function (_options?: Partial<BaseOptions>) {
       'no-sparse-arrays': 'error',
       'no-this-before-super': 'error',
       'no-undef': 'error',
+      'no-unexpected-multiline': 'error',
       'no-unreachable': 'error',
       'no-unsafe-finally': 'error',
       'no-unsafe-negation': 'error',
