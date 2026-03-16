@@ -1,5 +1,5 @@
 import { defineConfig, type OxlintConfig } from 'oxlint';
-import react, { type ReactOptions } from './react.ts';
+import react, { type ReactOptions } from './react.js';
 import reactRefresh from 'eslint-plugin-react-refresh';
 
 type NextOptions = ReactOptions & {

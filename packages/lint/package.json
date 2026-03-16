@@ -7,15 +7,17 @@
   "license": "MIT",
   "homepage": "https://github.com/4mbl/config/tree/main/packages/lint#readme",
   "exports": {
-    "./next": "./src/next.ts",
-    "./node": "./src/node.ts",
-    "./react": "./src/react.ts"
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "development": "./src/*.ts",
+      "default": "./dist/*.js"
+    }
   },
   "bin": {
     "lint": "./bin/cli.js"
   },
   "files": [
-    "src",
+    "dist",
     "package.json",
     "README.md",
     "CHANGELOG.md"
@@ -29,7 +31,7 @@
     "lint"
   ],
   "scripts": {
-    "build": "tsc --noEmit"
+    "build": "tsc"
   },
   "dependencies": {
     "eslint-plugin-react-compiler": "19.1.0-rc.2",
