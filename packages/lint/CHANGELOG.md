@@ -1,5 +1,12 @@
 # @4mbl/lint
 
+## 1.0.0-beta.0
+
+### Major Changes
+
+- c65e34e: Add CLI to allow default arguments and easier tool migration in the future
+- c65e34e: Migrate from eslint to oxlint
+
 ## 0.16.0
 
 ### Minor Changes
