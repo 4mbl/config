@@ -3,6 +3,10 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
+      "outputs": []
+    },
+    "@4mbl/tsconfig#build": {
+      "dependsOn": ["^build"],
       "outputs": ["dist"]
     }
   }
