@@ -1,4 +1,4 @@
-import { defineConfig } from 'oxlint';
+import { defineConfig, type OxlintConfig } from 'oxlint';
 import react, { type ReactOptions } from './react.ts';
 import reactRefresh from 'eslint-plugin-react-refresh';
 
@@ -77,3 +77,5 @@ export default function (options?: Partial<NextOptions>) {
     ],
   });
 }
+
+export type { OxlintConfig };

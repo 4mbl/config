@@ -1,4 +1,4 @@
-import { defineConfig } from 'oxlint';
+import { defineConfig, type OxlintConfig } from 'oxlint';
 import base from './base.ts';
 
 export type ReactOptions = {};
@@ -72,3 +72,5 @@ export default function (_options?: Partial<ReactOptions>) {
     ],
   });
 }
+
+export type { OxlintConfig };
