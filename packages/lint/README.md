@@ -2,9 +2,9 @@
 
 > Linting configuration for various environments.
 
-* [Usage](#usage)
-* [Available templates](#available-templates)
-* [Versioning](#versioning)
+- [Usage](#usage)
+- [Available templates](#available-templates)
+- [Versioning](#versioning)
 
 ---
 
@@ -16,27 +16,27 @@ Install the [`@4mbl/lint`](https://www.npmjs.com/package/@4mbl/lint) package.
 npm install -D @4mbl/lint
 ```
 
-Create a `eslint.config.ts` file in the root of your project with the desired configuration. This package currently uses eslint. That might change in a future major release.
+Create a `oxlint.config.ts` file in the root of your project with the desired configuration. This package currently uses oxlint. That might change in a future major release.
 
 ```js
-import defaultConfig, { defineConfig } from '@4mbl/lint/next'; // <-- change `next` to the desired template
+import defineConfig from '@4mbl/lint/next'; // <-- change `next` to the desired template
 
-export default defineConfig([...defaultConfig]);
+export default defineConfig();
 ```
 
 Set a script that uses the linting package.
 
 ```shell
-npm pkg set scripts.lint="eslint src"
+npm pkg set scripts.lint="oxlint src"
 ```
 
 You may need to explicitly allow the underlying linting packages to be used by your scripts.
 
-For example, when using pnpm, you need to set `publicHoistPattern` in your `pnpm-workspace.yaml` for ESLint.
+For example, when using pnpm, you need to set `publicHoistPattern` in your `pnpm-workspace.yaml` for oxlint to be used.
 
 ```yaml
 publicHoistPattern:
-  - eslint
+  - oxlint
 ```
 
 ## Available templates
@@ -48,8 +48,6 @@ These are the currently available config templates.
 - **React** - Extending the Vite-React linting config.
 
 ## Versioning
-
-_Until v1.0.0 is released, breaking changes may be introduced in minor releases without prior warnings._
 
 The package follows the following versioning scheme: `X.Y.Z`.
 

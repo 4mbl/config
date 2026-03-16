@@ -1,14 +1,13 @@
-import js from '@eslint/js';
-import { defineConfig, globalIgnores, type Config } from 'eslint/config';
-import globals from 'globals';
-import tseslint from 'typescript-eslint';
+import { defineConfig } from 'oxlint';
+import base from './base.ts';
 
-export { type Config, defineConfig };
+type NodeOptions = {};
 
-export default defineConfig([
-  globalIgnores(['dist/**']),
-  { files: ['**/*.{js,mjs,cjs,ts}'] },
-  { languageOptions: { globals: globals.node } },
-  js.configs.recommended,
-  ...tseslint.configs.recommended,
-]) satisfies Config[];
+// const DEFAULT_OPTIONS: NodeOptions = {};
+
+export default function (_options?: Partial<NodeOptions>) {
+  // const opts = { ...DEFAULT_OPTIONS, ...options };
+  return defineConfig({
+    extends: [base()],
+  });
+}
