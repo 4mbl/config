@@ -1,5 +1,16 @@
 # @4mbl/lint
 
+## 1.0.0-beta.3
+
+### Minor Changes
+
+- dd91a0d: Allow direct preset usage with default exports
+- dd91a0d: Add `--preset` argument to use any preset directly from the CLI
+
+### Patch Changes
+
+- 51c5a6a: Resolve uiPath from cwd in next preset
+
 ## 1.0.0-beta.2
 
 ### Minor Changes
