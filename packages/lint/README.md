@@ -2,18 +2,25 @@
 
 > Linting configuration for various environments.
 
+- [Installation](#installation)
 - [Usage](#usage)
-  - [Running `lint` CLI wrapper](#running-lint-cli-wrapper)
-  - [Running `oxlint` directly](#running-oxlint-directly)
-- [Available templates](#available-templates)
+  - [Using `lint` CLI](#using-lint-cli)
+    - [Setting up the `lint` CLI](#setting-up-the-lint-cli)
+    - [Choosing presets](#choosing-presets)
+    - [Beyond presets](#beyond-presets)
+    - [CLI default arguments](#cli-default-arguments)
+  - [Using `oxlint` directly](#using-oxlint-directly)
+    - [Oxlint CLI](#oxlint-cli)
+    - [Configuring oxlint](#configuring-oxlint)
+- [Available presets](#available-presets)
 - [Versioning](#versioning)
 
 ---
 
 > [!NOTE]
-> This package currently uses [oxlint](https://www.npmjs.com/package/oxlint) as the underlying linting tool. That may change in a future major release.
+> This package currently uses [oxlint](https://www.npmjs.com/package/oxlint) as the underlying linting tool. This may change in a future major release.
 
-## Usage
+## Installation
 
 Install the [`@4mbl/lint`](https://www.npmjs.com/package/@4mbl/lint) package.
 
@@ -21,32 +28,64 @@ Install the [`@4mbl/lint`](https://www.npmjs.com/package/@4mbl/lint) package.
 npm install -D @4mbl/lint
 ```
 
-Create a `oxlint.config.ts` file for your package. If you are using a monorepo, create a `oxlint.config.ts` for each package in the monorepo.
+## Usage
 
-```js
-import defineConfig from '@4mbl/lint/next'; // <-- change `next` to the desired template
+This package supports two ways of running the linting tool.
 
-export default defineConfig();
-```
+### Using `lint` CLI
 
-### Running `lint` CLI wrapper
+Using the provided `lint` CLI is the recommended approach, as it abstracts away the underlying linting tool and allows it to be changed in the future with minimal impact on consumers.
 
-This is the recommended way as it abstracts away the underlying linting package and allows us to change it in the future. While we try to keep the CLI wrapper interface stable between possible tooling changes, it is inevitable to have breaking changes if the underlying tooling changes.
+While we aim to keep the CLI stable across tooling changes, some breaking changes may be unavoidable if the underlying tool changes.
 
-Set a script that uses the linting CLI wrapper in your `package.json`. While it may be tempting to just call `lint` directly in CI or locally, it is recommended to use a script as it allows additional arguments to be passed to the CLI wrapper.
+#### Setting up the `lint` CLI
+
+To use the provided CLI, simply call `lint` in your scripts.
 
 ```shell
 npm pkg set scripts.lint="lint"
 ```
 
-The CLI wrapper uses the `src` directory by default and the following arguments:
+#### Choosing presets
+
+The CLI uses the environment-agnostic `base` preset by default. To use a different preset, pass the `--preset` argument with the preset name.
+
+```shell
+npm pkg set scripts.lint="lint --preset node"
+```
+
+_See the [available presets](#available-presets) section for a list of available presets._
+
+#### Beyond presets
+
+In some cases, the provided presets may not be sufficient for your use case. You can create an `oxlint.config.ts` file and pass it to the oxlint CLI directly.
+
+```shell
+npm pkg set scripts.lint="lint -- --config oxlint.config.ts"
+```
+
+You can use the provided presets as a base for your custom configuration, as shown in the [Configuring oxlint](#configuring-oxlint) section.
+
+#### CLI default arguments
+
+By default, the CLI targets the `src` directory and uses the following oxlint arguments:
 
 - `--max-warnings=0`
 - `--report-unused-disable-directives`
 
-These arguments can be overridden by passing them explicitly to the CLI wrapper.
+You can override these arguments or pass additional arguments to the underlying oxlint tool.
 
-### Running `oxlint` directly
+```shell
+npm pkg set scripts.lint="lint -- --max-warnings=10 --fix"
+```
+
+### Using `oxlint` directly
+
+For full control over the linting setup, you can use oxlint directly.
+
+#### Oxlint CLI
+
+Set the `lint` script in your `package.json` to use the `oxlint` binary.
 
 ```shell
 npm pkg set scripts.lint="oxlint src"
@@ -54,25 +93,40 @@ npm pkg set scripts.lint="oxlint src"
 
 You may need to explicitly allow the underlying linting packages to be used by your scripts.
 
-For example, when using pnpm, you need to set `publicHoistPattern` in your `pnpm-workspace.yaml`.
+For example, when using pnpm, set `publicHoistPattern` in your `pnpm-workspace.yaml`.
+
+#### Configuring oxlint
+
+Create an `oxlint.config.ts` file in your package with the desired preset.
+
+```js
+import nodeConfig from '@4mbl/lint/node';
+
+export default nodeConfig();
+```
+
+Some presets may accept additional options. For example, the `next` preset accepts a `uiPath` option.
+
+_See the [available presets](#available-presets) section for a list of available presets._
 
 ```yaml
 publicHoistPattern:
   - oxlint
 ```
 
-## Available templates
+## Available presets
 
-These are the currently available config templates.
+The following presets are currently available:
 
-- **Next** - Extending the Next.js linting config.
-- **Node** - Linting configuration for Node.js.
-- **React** - Extending the Vite-React linting config.
+- **Base** – Environment-agnostic linting rules.
+- **Next** – Additional linting rules for Next.js.
+- **Node** – Additional linting rules for Node.js.
+- **React** – Additional linting rules for React.
 
 ## Versioning
 
-The package follows the following versioning scheme: `X.Y.Z`.
+The package follows the versioning scheme `X.Y.Z`:
 
-- `X` - Reserved for linting provider changes as those might cause wider backwards compatibility issues.
-- `Y` - New linting rules. New rules are first added as warnings, and if error is preferred, the rule is promoted to produce errors in the next minor release.
-- `Z` - Minor fixes that make the previous release unusable.
+- `X` – Reserved for linting provider changes, as these may introduce broader compatibility issues.
+- `Y` – New linting rules. Rules are initially introduced as warnings and may be promoted to errors in a subsequent minor release.
+- `Z` – Fixes for issues that made the previous release unusable.
