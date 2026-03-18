@@ -17,3 +17,5 @@ function nodeConfig(_options?: Partial<NodeOptions>) {
 }
 
 export { type OxlintConfig, defineConfig, nodeConfig };
+
+export default nodeConfig();
