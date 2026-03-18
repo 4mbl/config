@@ -43,6 +43,7 @@
     "oxlint-tsgolint": "^0.17.0"
   },
   "devDependencies": {
-    "@4mbl/tsconfig": "workspace:*"
+    "@4mbl/tsconfig": "workspace:*",
+    "@types/node": "^24.12.0"
   }
 }

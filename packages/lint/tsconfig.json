@@ -1,3 +1,7 @@
 {
-  "extends": "@4mbl/tsconfig/node"
+  "extends": "@4mbl/tsconfig/node",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "types": ["node"]
+  }
 }
