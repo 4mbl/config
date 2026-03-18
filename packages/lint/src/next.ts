@@ -1,3 +1,5 @@
+import path from 'node:path';
+import process from 'node:process';
 import { defineConfig, type OxlintConfig } from 'oxlint';
 import { type ReactOptions, reactConfig } from './react.js';
 import reactRefresh from 'eslint-plugin-react-refresh';
@@ -65,7 +67,7 @@ function nextConfig(options?: Partial<NextOptions>) {
         ? { files: [], rules: {} }
         : {
             files: [
-              `${opts.uiPath}/**/*.{js,jsx,mjs,ts,tsx,mts,cts}`.replaceAll(
+              `${path.resolve(process.cwd(), opts.uiPath)}/**/*.{js,jsx,mjs,ts,tsx,mts,cts}`.replaceAll(
                 '//',
                 '/',
               ),
