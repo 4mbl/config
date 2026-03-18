@@ -74,3 +74,5 @@ function reactConfig(_options?: Partial<ReactOptions>) {
 }
 
 export { type OxlintConfig, defineConfig, reactConfig };
+
+export default reactConfig();

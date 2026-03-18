@@ -131,3 +131,5 @@ function baseConfig(_options?: Partial<BaseOptions>) {
 }
 
 export { type OxlintConfig, defineConfig, baseConfig };
+
+export default baseConfig();

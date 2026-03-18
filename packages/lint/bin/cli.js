@@ -1,21 +1,40 @@
 #!/usr/bin/env node
 
 import { spawnSync } from 'node:child_process';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const args = process.argv.slice(2);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-const hasPath = args.some((a) => !a.startsWith('-'));
-const hasMaxWarn = args.some((a) => a.startsWith('--max-warnings'));
-const hasReportUnused = args.some((a) =>
+const rawArgs = process.argv.slice(2);
+
+const separatorIndex = rawArgs.indexOf('--');
+
+const wrapperArgs =
+  separatorIndex === -1 ? rawArgs : rawArgs.slice(0, separatorIndex);
+const toolArgs = separatorIndex === -1 ? [] : rawArgs.slice(separatorIndex + 1);
+
+const presetArgIndex = wrapperArgs.findIndex((a) => a === '--preset');
+const presetName =
+  presetArgIndex !== -1 ? wrapperArgs[presetArgIndex + 1] : 'base';
+
+const configPath = path.resolve(__dirname, `../dist/${presetName}.js`);
+
+const hasPath = toolArgs.some((a) => !a.startsWith('-'));
+const hasMaxWarn = toolArgs.some((a) => a.startsWith('--max-warnings'));
+const hasReportUnused = toolArgs.some((a) =>
   a.startsWith('--report-unused-disable-directives'),
 );
 
 const finalArgs = [
-  ...(hasPath ? [] : ['src']),
-  ...(hasMaxWarn ? [] : ['--max-warnings=0']),
-  ...(hasReportUnused ? [] : ['--report-unused-disable-directives']),
-  ...args,
-];
+  '--config',
+  configPath,
+  hasPath ? undefined : 'src',
+  hasMaxWarn ? undefined : '--max-warnings=0',
+  hasReportUnused ? undefined : '--report-unused-disable-directives',
+  ...toolArgs,
+].filter((a) => a !== undefined);
 
 const result = spawnSync('oxlint', finalArgs, {
   stdio: 'inherit',

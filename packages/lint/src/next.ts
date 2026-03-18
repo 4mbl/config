@@ -79,3 +79,5 @@ function nextConfig(options?: Partial<NextOptions>) {
 }
 
 export { type OxlintConfig, defineConfig, nextConfig };
+
+export default nextConfig();

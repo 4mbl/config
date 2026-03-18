@@ -9,13 +9,13 @@
 
 ### Patch Changes
 
-- 2b77e08: fix(lint): transpile configs to support usage from node_modules
+- 2b77e08: Transpile configs to support usage from node_modules
 
 ## 1.0.0-beta.1
 
 ### Patch Changes
 
-- 2c338b1: fix(lint): re-export `OxlintConfig` to make config portable
+- 2c338b1: Re-export `OxlintConfig` to make config portable
 
 ## 1.0.0-beta.0
 
