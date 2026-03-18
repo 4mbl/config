@@ -45,8 +45,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  beta:
-    name: Release betas
+  alpha:
+    name: Release alphas
     runs-on: ubuntu-latest
     needs: release
     timeout-minutes: 30
@@ -74,7 +74,7 @@ jobs:
       - name: Publish to npm
         run: |
           SHORT_SHA=$(git rev-parse --short HEAD)
-          BETA_VERSION="0.0.0-beta.$SHORT_SHA"
-          echo "Publishing workspace packages as beta: $BETA_VERSION"
-          pnpm -r exec npm version "$BETA_VERSION" --no-git-tag-version
-          pnpm -r publish --tag beta --access public --no-git-checks
+          ALPHA_VERSION="0.0.0-alpha.$SHORT_SHA"
+          echo "Publishing workspace packages as alpha: $ALPHA_VERSION"
+          pnpm -r exec npm version "$ALPHA_VERSION" --no-git-tag-version
+          pnpm -r publish --tag alpha --access public --no-git-checks
