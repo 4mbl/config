@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     branches:
-      - main
+      - release/lint-v0
 
 permissions:
   contents: write
