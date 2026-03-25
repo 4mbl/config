@@ -1,5 +1,11 @@
 # @4mbl/lint
 
+## 0.17.0
+
+### Minor Changes
+
+- bc086fc: Downgrade to ESLint 9 to give the plugin ecosystem more time to stabilize
+
 ## 0.16.0
 
 ### Minor Changes
