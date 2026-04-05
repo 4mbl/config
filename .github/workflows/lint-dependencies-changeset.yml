@@ -22,18 +22,18 @@ jobs:
 
       - name: Create changeset
         run: |
-          FILE_PATH=".changeset/lint-config-deps.md"
+          FILE_PATH=".changeset/lint-upgrade-deps.md"
           echo "---" > $FILE_PATH
           echo '"@4mbl/lint": minor' >> $FILE_PATH
           echo "---" >> $FILE_PATH
           echo "" >> $FILE_PATH
-          echo "Upgrade config dependencies" >> $FILE_PATH
+          echo "Upgrade dependencies" >> $FILE_PATH
 
-          git switch -c create-config-deps-changeset
+          git switch -c lint-upgrade-deps-changeset
           git add $FILE_PATH
-          git commit -m "chore: create changeset for config deps"
+          git commit -m "docs(changeset): upgrade dependencies"
           git push origin HEAD
-          gh pr create --title "chore: create changeset for config deps" --body ""
+          gh pr create --title "docs(changeset): upgrade dependencies" --body ""
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
