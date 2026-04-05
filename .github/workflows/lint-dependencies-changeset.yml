@@ -1,4 +1,4 @@
-name: \[lint\] Create changeset for dependency upgrades
+name: "[lint] Create changeset for dependency upgrades"
 
 on:
   workflow_dispatch:
