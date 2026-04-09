@@ -22,7 +22,7 @@ jobs:
 
       - name: Create changeset
         run: |
-          FILE_PATH=".changeset/lint-upgrade-deps.md"
+          FILE_PATH=".changeset/lint-deps-$(date +%Y-%m-%d).md"
           echo "---" > $FILE_PATH
           echo '"@4mbl/lint": minor' >> $FILE_PATH
           echo "---" >> $FILE_PATH
