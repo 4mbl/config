@@ -1,5 +1,12 @@
 # @4mbl/lint
 
+## 1.0.0-beta.5
+
+### Minor Changes
+
+- 125b851: Enable most rule categories
+- 473bad0: Upgrade dependencies
+
 ## 1.0.0-beta.4
 
 ### Minor Changes
