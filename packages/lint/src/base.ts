@@ -11,7 +11,13 @@ function baseConfig(_options?: Partial<BaseOptions>) {
     plugins: ['typescript', 'unicorn'],
     jsPlugins: [],
     categories: {
-      correctness: 'off',
+      correctness: 'error',
+      suspicious: 'warn',
+      pedantic: 'off',
+      perf: 'warn',
+      style: 'warn',
+      restriction: 'warn',
+      nursery: 'off',
     },
     env: {
       builtin: true,
