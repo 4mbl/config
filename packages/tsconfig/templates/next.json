@@ -23,7 +23,8 @@
     ],
     "paths": {
       "@/*": ["${configDir}/src/*"]
-    }
+    },
+    "types": ["node"]
   },
   "include": [
     "${configDir}/next-env.d.ts",
