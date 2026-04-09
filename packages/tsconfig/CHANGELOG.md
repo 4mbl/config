@@ -1,5 +1,15 @@
 # @4mbl/tsconfig Changelog
 
+## 5.0.0-beta.0
+
+### Major Changes
+
+- e651e24: Enable `noUncheckedSideEffectImports` on all templates. This is the default in TypeScript 6/7, we set it explicitly to ensure consistent behavior for templates that already enabled it.
+- e651e24: Disable automatic type discovery to align with TypeScript 6/7 behavior. Node.js types are now explicitly enabled for Node.js related templates.
+- e651e24: All templates now have `rootDir` option set to './src' to align with TypeScript 6/7 behavior.
+- e651e24: Drop explicit "dom.iterable" from `lib` as it is included in "dom" by default in TypeScript 6/7.
+- e651e24: Remove explicit `target` from all templates to use the latest ECMAScript version in TypeScript 6/7. The ES version on `lib` is now "ESNext" all templates.
+
 ## 4.4.0
 
 ### Minor Changes
