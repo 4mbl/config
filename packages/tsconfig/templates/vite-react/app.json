@@ -4,19 +4,16 @@
   "extends": "../base.json",
   "compilerOptions": {
     "tsBuildInfoFile": "${configDir}/node_modules/.tmp/tsconfig.app.tsbuildinfo",
-    "target": "ES2022",
     "useDefineForClassFields": true,
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "lib": ["esnext", "dom"],
     "module": "ESNext",
+    "types": [],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "noEmit": true,
-    "jsx": "react-jsx",
-
-    /* Linting */
-    "noUncheckedSideEffectImports": true
+    "jsx": "react-jsx"
   },
   "include": ["${configDir}/src"]
 }

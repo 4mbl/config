@@ -3,11 +3,12 @@
   "display": "Browser",
   "extends": "./base.json",
   "compilerOptions": {
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "lib": ["esnext", "dom"],
     "jsx": "react-jsx",
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "paths": { "*": ["${configDir}/src/*"] },
+    "types": [],
     "noEmit": true,
     "sourceMap": true
   }

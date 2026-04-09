@@ -4,10 +4,10 @@
   "extends": "./base.json",
   "compilerOptions": {
     // same options as node template
-    "target": "ESNext",
     "moduleResolution": "NodeNext",
     "module": "NodeNext",
     "paths": { "*": ["${configDir}/src/*"] },
+    "types": ["node"],
 
     // options for typescript-only
     // https://nodejs.org/api/typescript.html#type-stripping

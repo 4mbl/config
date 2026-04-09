@@ -3,7 +3,8 @@
   "display": "Base",
   "compilerOptions": {
     /* Base Options */
-    "lib": ["ESNext"],
+    "rootDir": "${configDir}/src",
+    "lib": ["esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
@@ -11,9 +12,12 @@
     "paths": {
       "@/*": ["${configDir}/src/*"]
     },
+    "types": [],
 
     /* Output */
-    "target": "ES6",
+    //* "target" is omitted here intentionally, typescript
+    //* defaults to current year's ecmascript standard
+
     "outDir": "${configDir}/dist",
     "sourceMap": true,
     "declarationMap": true,
@@ -36,7 +40,8 @@
     "noImplicitReturns": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noUncheckedIndexedAccess": true
+    "noUncheckedIndexedAccess": true,
+    "noUncheckedSideEffectImports": true
   },
   "include": ["${configDir}/src/**/*"],
   "exclude": ["${configDir}/node_modules"]
