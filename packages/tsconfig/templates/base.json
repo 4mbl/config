@@ -40,7 +40,8 @@
     "noImplicitReturns": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noUncheckedIndexedAccess": true
+    "noUncheckedIndexedAccess": true,
+    "noUncheckedSideEffectImports": true
   },
   "include": ["${configDir}/src/**/*"],
   "exclude": ["${configDir}/node_modules"]
