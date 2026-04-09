@@ -3,6 +3,7 @@
   "display": "Base",
   "compilerOptions": {
     /* Base Options */
+    "rootDir": "./src",
     "lib": ["ESNext"],
     "allowJs": true,
     "skipLibCheck": true,
