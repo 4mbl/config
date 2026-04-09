@@ -33,7 +33,7 @@
     "build": "rm -rf dist && mkdir dist && cp -r templates/* dist/ && node scripts/generate-exports.mjs"
   },
   "peerDependencies": {
-    "typescript": ">=5.8.0"
+    "typescript": ">=6.0.0"
   },
   "peerDependenciesMeta": {
     "typescript": {
