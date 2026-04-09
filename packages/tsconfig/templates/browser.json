@@ -3,7 +3,7 @@
   "display": "Browser",
   "extends": "./base.json",
   "compilerOptions": {
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "lib": ["esnext", "dom"],
     "jsx": "react-jsx",
     "module": "ESNext",
     "moduleResolution": "Bundler",

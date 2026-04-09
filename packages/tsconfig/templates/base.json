@@ -4,7 +4,7 @@
   "compilerOptions": {
     /* Base Options */
     "rootDir": "./src",
-    "lib": ["ESNext"],
+    "lib": ["esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
