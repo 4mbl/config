@@ -3,7 +3,6 @@
   "display": "Node",
   "extends": "./base.json",
   "compilerOptions": {
-    "target": "ESNext",
     "moduleResolution": "NodeNext",
     "module": "NodeNext",
     "paths": { "*": ["${configDir}/src/*"] },

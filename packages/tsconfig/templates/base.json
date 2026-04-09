@@ -15,7 +15,9 @@
     "types": [],
 
     /* Output */
-    "target": "ES6",
+    //* "target" is omitted here intentionally, typescript
+    //* defaults to current year's ecmascript standard
+
     "outDir": "${configDir}/dist",
     "sourceMap": true,
     "declarationMap": true,

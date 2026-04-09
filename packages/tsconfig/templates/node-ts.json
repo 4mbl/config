@@ -4,7 +4,6 @@
   "extends": "./base.json",
   "compilerOptions": {
     // same options as node template
-    "target": "ESNext",
     "moduleResolution": "NodeNext",
     "module": "NodeNext",
     "paths": { "*": ["${configDir}/src/*"] },
