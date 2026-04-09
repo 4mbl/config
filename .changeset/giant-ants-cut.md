@@ -1,5 +1,5 @@
 ---
-"@4mbl/tsconfig": major
+'@4mbl/tsconfig': major
 ---
 
-Enable Node.js type discovery explicitly to support TypeScript 6/7.
+Disable automatic type discovery to align with TypeScript 6/7 behavior. Node.js types are now explicitly enabled for Node.js related templates.
