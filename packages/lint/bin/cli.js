@@ -16,6 +16,26 @@ const wrapperArgs =
   separatorIndex === -1 ? rawArgs : rawArgs.slice(0, separatorIndex);
 const toolArgs = separatorIndex === -1 ? [] : rawArgs.slice(separatorIndex + 1);
 
+if (wrapperArgs.includes('--help') || rawArgs.includes('-h')) {
+  console.log(`
+Usage:
+  lint [options] -- [oxlint options]
+
+Wrapper options:
+  --preset <name>     Use a preset config (default: base if no config within cwd)
+
+Examples:
+  lint
+  lint --preset node
+  lint -- src --fix
+
+Notes:
+  Everything after "--" is passed directly to oxlint.
+`);
+
+  process.exit(0);
+}
+
 const presetArgIndex = wrapperArgs.findIndex((a) => a === '--preset');
 
 const presetName =
