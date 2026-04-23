@@ -21,7 +21,7 @@ if (wrapperArgs.includes('--help') || rawArgs.includes('-h')) {
 Usage:
   lint [options] -- [oxlint options]
 
-Wrapper options:
+Options:
   --preset <name>     Use a preset config (default: base if no config within cwd)
 
 Examples:
