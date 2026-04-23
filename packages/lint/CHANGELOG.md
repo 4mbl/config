@@ -1,5 +1,12 @@
 # @4mbl/lint
 
+## 1.0.0-beta.9
+
+### Minor Changes
+
+- 491164e: Add --help flag to cli
+- 491164e: Fallback to Oxlint config lookup if no preset is passed to CLI and Oxlint config exists within working directory.
+
 ## 1.0.0-beta.8
 
 ### Minor Changes
