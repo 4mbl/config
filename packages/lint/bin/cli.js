@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { spawnSync } from 'node:child_process';
+import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -15,11 +16,38 @@ const wrapperArgs =
   separatorIndex === -1 ? rawArgs : rawArgs.slice(0, separatorIndex);
 const toolArgs = separatorIndex === -1 ? [] : rawArgs.slice(separatorIndex + 1);
 
-const presetArgIndex = wrapperArgs.findIndex((a) => a === '--preset');
-const presetName =
-  presetArgIndex !== -1 ? wrapperArgs[presetArgIndex + 1] : 'base';
+if (wrapperArgs.includes('--help') || rawArgs.includes('-h')) {
+  console.log(`
+Usage:
+  lint [options] -- [oxlint options]
 
-const configPath = path.resolve(__dirname, `../dist/${presetName}.js`);
+Options:
+  --preset <name>     Use a preset config (default: base if no config within cwd)
+
+Examples:
+  lint
+  lint --preset node
+  lint -- src --fix
+
+Notes:
+  Everything after "--" is passed directly to oxlint.
+`);
+
+  process.exit(0);
+}
+
+const presetArgIndex = wrapperArgs.findIndex((a) => a === '--preset');
+
+const presetName =
+  presetArgIndex !== -1
+    ? wrapperArgs[presetArgIndex + 1]
+    : !existsSync('./oxlint.config.ts') && !existsSync('./.oxlintrc.json')
+      ? 'base'
+      : undefined;
+
+const configPath = presetName
+  ? path.resolve(__dirname, `../dist/${presetName}.js`)
+  : undefined;
 
 const hasPath = toolArgs.some((a) => !a.startsWith('-'));
 const hasMaxWarn = toolArgs.some((a) => a.startsWith('--max-warnings'));
@@ -28,7 +56,7 @@ const hasReportUnused = toolArgs.some((a) =>
 );
 
 const finalArgs = [
-  '--config',
+  configPath ? '--config' : undefined,
   configPath,
   hasPath ? undefined : 'src',
   hasMaxWarn ? undefined : '--max-warnings=0',
