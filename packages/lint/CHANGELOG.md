@@ -1,5 +1,11 @@
 # @4mbl/lint
 
+## 1.0.0-beta.8
+
+### Minor Changes
+
+- a78f42b: Configure rules to reduce noise
+
 ## 1.0.0-beta.7
 
 ### Minor Changes
