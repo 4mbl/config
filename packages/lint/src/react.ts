@@ -13,14 +13,13 @@ function reactConfig(_options?: Partial<ReactOptions>) {
     plugins: ['react'],
     jsPlugins: [
       { name: 'react-hooks-js', specifier: 'eslint-plugin-react-hooks' },
-      { name: 'react-refresh-js', specifier: 'eslint-plugin-react-refresh' },
       { name: 'react-compiler-js', specifier: 'eslint-plugin-react-compiler' },
     ],
     rules: {
-      'react-hooks-js/rules-of-hooks': 'error',
-      'react-hooks-js/exhaustive-deps': 'warn',
+      'react/rules-of-hooks': 'error',
+      'react/exhaustive-deps': 'warn',
       'react-hooks-js/set-state-in-effect': 'warn',
-      'react-refresh-js/only-export-components': 'error',
+      'react/only-export-components': 'error',
       'react-compiler-js/react-compiler': 'error',
 
       'react/jsx-filename-extension': 'off',
