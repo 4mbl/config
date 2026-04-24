@@ -1,5 +1,13 @@
 # @4mbl/lint
 
+## 1.0.0-beta.10
+
+### Minor Changes
+
+- 007a287: Configure more rules to reduce noise
+- 007a287: Use native only-export-components rule instead of js plugin
+- 007a287: Use correct namespace for Next.js rules
+
 ## 1.0.0-beta.9
 
 ### Minor Changes
