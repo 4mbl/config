@@ -46,28 +46,19 @@ function nextConfig(options?: Partial<NextOptions>) {
       'nextjs/no-head-import-in-document': 'error',
       'nextjs/no-script-component-in-head': 'error',
 
+      // ignores warnings for special exports in page and layout files
+      // https://github.com/ArnaudBarre/eslint-plugin-react-refresh?tab=readme-ov-file#next-config
       'react/only-export-components': [
         'warn',
-        { allowExportNames: ['metadata'] },
+        {
+          allowExportNames: (reactRefresh.configs.next.rules as any)[
+            'react-refresh/only-export-components'
+          ][1]['allowExportNames'],
+        },
       ],
     },
     ignorePatterns: ['.next/**', 'out/**', 'build/**', 'next-env.d.ts'],
     overrides: [
-      // ignores warnings for special exports in page and layout files
-      // https://github.com/ArnaudBarre/eslint-plugin-react-refresh?tab=readme-ov-file#next-config
-      {
-        files: ['**/*.{js,jsx,mjs,ts,tsx,mts,cts}'],
-        rules: {
-          'react-refresh-js/only-export-components': [
-            'error',
-            {
-              allowExportNames: (reactRefresh.configs.next.rules as any)[
-                'react-refresh/only-export-components'
-              ][1]['allowExportNames'],
-            },
-          ],
-        },
-      },
       opts.uiPath === null
         ? { files: [], rules: {} }
         : {
@@ -78,7 +69,7 @@ function nextConfig(options?: Partial<NextOptions>) {
               ),
             ],
             rules: {
-              'react-refresh-js/only-export-components': 'off',
+              'react/only-export-components': 'off',
             },
           },
     ],
