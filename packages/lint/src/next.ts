@@ -25,44 +25,40 @@ function nextConfig(options?: Partial<NextOptions>) {
     extends: [reactConfig(options)],
     plugins: ['nextjs'],
     rules: {
-      '@next/next/google-font-display': 'warn',
-      '@next/next/google-font-preconnect': 'warn',
-      '@next/next/next-script-for-ga': 'warn',
-      '@next/next/no-async-client-component': 'warn',
-      '@next/next/no-before-interactive-script-outside-document': 'warn',
-      '@next/next/no-css-tags': 'warn',
-      '@next/next/no-head-element': 'warn',
-      '@next/next/no-html-link-for-pages': 'error',
-      '@next/next/no-page-custom-font': 'warn',
-      '@next/next/no-styled-jsx-in-document': 'warn',
-      '@next/next/no-sync-scripts': 'error',
-      '@next/next/no-title-in-document-head': 'warn',
-      '@next/next/no-typos': 'warn',
-      '@next/next/no-unwanted-polyfillio': 'warn',
-      '@next/next/inline-script-id': 'error',
-      '@next/next/no-assign-module-variable': 'error',
-      '@next/next/no-document-import-in-page': 'error',
-      '@next/next/no-duplicate-head': 'error',
-      '@next/next/no-head-import-in-document': 'error',
-      '@next/next/no-script-component-in-head': 'error',
+      'nextjs/google-font-display': 'warn',
+      'nextjs/google-font-preconnect': 'warn',
+      'nextjs/next-script-for-ga': 'warn',
+      'nextjs/no-async-client-component': 'warn',
+      'nextjs/no-before-interactive-script-outside-document': 'warn',
+      'nextjs/no-css-tags': 'warn',
+      'nextjs/no-head-element': 'warn',
+      'nextjs/no-html-link-for-pages': 'error',
+      'nextjs/no-page-custom-font': 'warn',
+      'nextjs/no-styled-jsx-in-document': 'warn',
+      'nextjs/no-sync-scripts': 'error',
+      'nextjs/no-title-in-document-head': 'warn',
+      'nextjs/no-typos': 'warn',
+      'nextjs/no-unwanted-polyfillio': 'warn',
+      'nextjs/inline-script-id': 'error',
+      'nextjs/no-assign-module-variable': 'error',
+      'nextjs/no-document-import-in-page': 'error',
+      'nextjs/no-duplicate-head': 'error',
+      'nextjs/no-head-import-in-document': 'error',
+      'nextjs/no-script-component-in-head': 'error',
+
+      // ignores warnings for special exports in page and layout files
+      // https://github.com/ArnaudBarre/eslint-plugin-react-refresh?tab=readme-ov-file#next-config
+      'react/only-export-components': [
+        'warn',
+        {
+          allowExportNames: (reactRefresh.configs.next.rules as any)[
+            'react-refresh/only-export-components'
+          ][1]['allowExportNames'],
+        },
+      ],
     },
     ignorePatterns: ['.next/**', 'out/**', 'build/**', 'next-env.d.ts'],
     overrides: [
-      // ignores warnings for special exports in page and layout files
-      // https://github.com/ArnaudBarre/eslint-plugin-react-refresh?tab=readme-ov-file#next-config
-      {
-        files: ['**/*.{js,jsx,mjs,ts,tsx,mts,cts}'],
-        rules: {
-          'react-refresh-js/only-export-components': [
-            'error',
-            {
-              allowExportNames: (reactRefresh.configs.next.rules as any)[
-                'react-refresh/only-export-components'
-              ][1]['allowExportNames'],
-            },
-          ],
-        },
-      },
       opts.uiPath === null
         ? { files: [], rules: {} }
         : {
@@ -73,7 +69,7 @@ function nextConfig(options?: Partial<NextOptions>) {
               ),
             ],
             rules: {
-              'react-refresh-js/only-export-components': 'off',
+              'react/only-export-components': 'off',
             },
           },
     ],
