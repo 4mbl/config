@@ -123,7 +123,7 @@ function baseConfig(_options?: Partial<BaseOptions>) {
       'unicorn/switch-case-braces': 'warn',
       'typescript/prefer-regexp-exec': 'warn',
       'eslint/init-declarations': 'off',
-      'unicorn/no-null': 'warn', // easier to just use undefined
+      'unicorn/no-null': 'off', // too strict, for example JSON.stringify requires null parameter, null is also required in react
       'eslint/no-undefined': 'off', // undefined is necessary
       'eslint/no-console': 'off', // browser is no longer the only environment js is run on
       'eslint/no-continue': 'off', // early-continue is useful
@@ -132,10 +132,20 @@ function baseConfig(_options?: Partial<BaseOptions>) {
       'eslint/no-void': 'off', // void is useful for explicitly indicating floating promises
       'eslint/no-nested-ternary': 'off', // ternaries are cleaner and necessary due to lack of match expressions
       'eslint/no-empty-function': ['warn', { allow: ['constructors'] }], // empty constructors are allowed for explicit singleton pattern
+      'unicorn/no-instanceof-builtins': 'off', // better typesafety than using `typeof`
+      'unicorn/prefer-spread': 'off', // conflicts with other rules
+      'eslint/new-cap': 'off', // false positives
+      'unicorn/no-await-expression-member': 'off', // accessing await result directly is more desired than slight readability improvement
       'eslint/no-duplicate-imports': [
         'warn',
         { allowSeparateTypeImports: true },
       ],
+      'import/no-named-export': 'off',
+      'import/no-default-export': 'off',
+      'import/prefer-default-export': 'off',
+      'import/no-namespace': 'off', // star imports are still pretty necessary
+      'import/exports-last': 'off', // star imports are still pretty necessary
+      'import/no-unassigned-import': 'off', // required for css imports
 
       // Array.from() is slower than new Array()
       // https://jsperf.app/tatuse

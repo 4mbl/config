@@ -45,6 +45,11 @@ function nextConfig(options?: Partial<NextOptions>) {
       '@next/next/no-duplicate-head': 'error',
       '@next/next/no-head-import-in-document': 'error',
       '@next/next/no-script-component-in-head': 'error',
+
+      'react/only-export-components': [
+        'warn',
+        { allowExportNames: ['metadata'] },
+      ],
     },
     ignorePatterns: ['.next/**', 'out/**', 'build/**', 'next-env.d.ts'],
     overrides: [

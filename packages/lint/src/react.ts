@@ -22,6 +22,11 @@ function reactConfig(_options?: Partial<ReactOptions>) {
       'react-hooks-js/set-state-in-effect': 'warn',
       'react-refresh-js/only-export-components': 'error',
       'react-compiler-js/react-compiler': 'error',
+
+      'react/jsx-filename-extension': 'off',
+      'react/jsx-max-depth': 'off',
+      'react/no-multi-comp': 'off',
+      'react/jsx-props-no-spreading': 'off',
     },
     overrides: [
       {
