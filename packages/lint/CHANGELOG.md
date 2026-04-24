@@ -1,5 +1,11 @@
 # @4mbl/lint
 
+## 1.0.0-beta.11
+
+### Minor Changes
+
+- 20b3dae: Use native rules for React when possible
+
 ## 1.0.0-beta.10
 
 ### Minor Changes
