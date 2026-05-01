@@ -40,7 +40,7 @@
     "globals": "^17.5.0",
     "jiti": "^2.6.1",
     "oxlint": "^1.62.0",
-    "oxlint-tsgolint": "^0.21.1"
+    "oxlint-tsgolint": "^0.22.1"
   },
   "devDependencies": {
     "@4mbl/tsconfig": "workspace:*",
