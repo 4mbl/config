@@ -16,7 +16,6 @@ function reactConfig(_options?: Partial<ReactOptions>) {
       // https://github.com/oxc-project/oxc/issues/10048
       // this means compiler related rules are not yet supported
       // https://github.com/oxc-project/oxc/issues/1022
-      // oxlint is waiting on react compiler rust port
       // react compiler port to rust may enable compiler related rules
       // https://github.com/facebook/react/pull/36173
       { name: 'react-hooks-js', specifier: 'eslint-plugin-react-hooks' },
