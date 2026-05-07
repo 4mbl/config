@@ -2,7 +2,6 @@ import path from 'node:path';
 import process from 'node:process';
 import { defineConfig, type OxlintConfig } from 'oxlint';
 import { type ReactOptions, reactConfig } from './react.js';
-import reactRefresh from 'eslint-plugin-react-refresh';
 
 type NextOptions = ReactOptions & {
   /**
@@ -47,13 +46,29 @@ function nextConfig(options?: Partial<NextOptions>) {
       'nextjs/no-script-component-in-head': 'error',
 
       // ignores warnings for special exports in page and layout files
-      // https://github.com/ArnaudBarre/eslint-plugin-react-refresh?tab=readme-ov-file#next-config
       'react/only-export-components': [
         'warn',
         {
-          allowExportNames: (reactRefresh.configs.next.rules as any)[
-            'react-refresh/only-export-components'
-          ][1]['allowExportNames'],
+          // https://github.com/ArnaudBarre/eslint-plugin-react-refresh/blob/main/src/index.ts
+          allowExportNames: [
+            // removed in next@16.0.0: https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#version-history
+            // 'experimental_ppr',
+
+            'dynamic',
+            'dynamicParams',
+            'revalidate',
+            'fetchCache',
+            'runtime',
+            'preferredRegion',
+            'maxDuration',
+            'metadata',
+            'generateMetadata',
+            'viewport',
+            'generateViewport',
+            'generateImageMetadata',
+            'generateSitemaps',
+            'generateStaticParams',
+          ],
         },
       ],
     },
