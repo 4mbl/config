@@ -146,6 +146,8 @@ function baseConfig(_options?: Partial<BaseOptions>) {
       'import/no-namespace': 'off', // star imports are still pretty necessary
       'import/exports-last': 'off', // star imports are still pretty necessary
       'import/no-unassigned-import': 'off', // required for css imports
+      'import/group-exports': 'off', // co-locating export statement with the function it exports is more readable
+      'import/consistent-type-specifier-style': 'off', // single import per file is more readable
 
       // Array.from() is slower than new Array()
       // https://jsperf.app/tatuse
@@ -159,6 +161,7 @@ function baseConfig(_options?: Partial<BaseOptions>) {
       // may revisit
       'unicorn/no-anonymous-default-export': 'off',
       'eslint/sort-imports': 'off', // consider when oxfmt is setup
+      'import/no-relative-parent-imports': 'off',
 
       // currently produces too many false positives
       'eslint/no-magic-numbers': 'off',
