@@ -23,6 +23,7 @@ function nodeConfig(options?: Partial<NodeOptions>) {
         'warn',
         { allow: ['__dirname', '__filename'] },
       ],
+      'no-nodejs-modules': 'off',
     },
   });
 }
