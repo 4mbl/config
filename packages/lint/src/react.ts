@@ -5,12 +5,14 @@ export type ReactOptions = {};
 
 // const DEFAULT_OPTIONS: ReactOptions = {};
 
-function reactConfig(_options?: Partial<ReactOptions>) {
+function reactConfig(options?: Partial<ReactOptions>) {
   // const opts = { ...DEFAULT_OPTIONS, ...options };
 
+  const base = baseConfig(options);
+
   return defineConfig({
-    extends: [baseConfig()],
-    plugins: ['react'],
+    extends: [base],
+    plugins: [...base.plugins, 'react'],
     jsPlugins: [
       // react compiler is not yet supported by oxc
       // https://github.com/oxc-project/oxc/issues/10048
