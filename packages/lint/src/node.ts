@@ -17,6 +17,13 @@ function nodeConfig(options?: Partial<NodeOptions>) {
     env: {
       node: true,
     },
+
+    rules: {
+      'eslint/no-underscore-dangle': [
+        'warn',
+        { allow: ['__dirname', '__filename'] },
+      ],
+    },
   });
 }
 
