@@ -1,5 +1,15 @@
 # @4mbl/lint
 
+## 1.0.0-beta.13
+
+### Minor Changes
+
+- dd66007: Pin dependencies to ensure future compatibility
+- 0feb87d: Remove unused dependencies and inline trivial imports
+- 1d98a33: Disable `react/forbid-component-props` and `react/forbid-dom-props` to ensure Tailwind compatibility
+- a9085f2: Extend inherited plugins in child presets
+- 014d999: Allow `eslint/no-underscore-dangle` for `__dirname` and `__filename` in node
+
 ## 1.0.0-beta.12
 
 ### Minor Changes
