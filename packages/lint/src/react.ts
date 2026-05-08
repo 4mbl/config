@@ -32,6 +32,10 @@ function reactConfig(_options?: Partial<ReactOptions>) {
       'react/jsx-max-depth': 'off',
       'react/no-multi-comp': 'off',
       'react/jsx-props-no-spreading': 'off',
+
+      // conflicts with tailwind
+      'react/forbid-component-props': 'off',
+      'react/forbid-dom-props': 'off',
     },
     overrides: [
       {
