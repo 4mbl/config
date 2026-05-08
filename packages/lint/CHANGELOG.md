@@ -1,5 +1,13 @@
 # @4mbl/lint
 
+## 1.0.0-beta.14
+
+### Minor Changes
+
+- e34f9fe: Enable import plugin in base
+- 5586655: Disable some import plugin rules in base
+- 9b2b412: Disable `no-nodejs-modules` in node
+
 ## 1.0.0-beta.13
 
 ### Minor Changes
