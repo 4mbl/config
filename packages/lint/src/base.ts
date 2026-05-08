@@ -8,7 +8,7 @@ function baseConfig(_options?: Partial<BaseOptions>) {
   // const opts = { ...DEFAULT_OPTIONS, ...options };
 
   return defineConfig({
-    plugins: ['typescript', 'unicorn'],
+    plugins: ['import', 'typescript', 'unicorn'],
     jsPlugins: [],
     categories: {
       correctness: 'error',
