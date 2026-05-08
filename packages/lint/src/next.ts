@@ -20,9 +20,11 @@ const DEFAULT_OPTIONS: NextOptions = { uiPath: 'src/components/ui/' };
 function nextConfig(options?: Partial<NextOptions>) {
   const opts = { ...DEFAULT_OPTIONS, ...options };
 
+  const react = reactConfig(options);
+
   return defineConfig({
-    extends: [reactConfig(options)],
-    plugins: ['nextjs'],
+    extends: [react],
+    plugins: [...react.plugins, 'nextjs'],
     rules: {
       'nextjs/google-font-display': 'warn',
       'nextjs/google-font-preconnect': 'warn',
