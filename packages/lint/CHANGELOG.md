@@ -1,5 +1,11 @@
 # @4mbl/lint
 
+## 1.0.0-beta.15
+
+### Minor Changes
+
+- aa95edc: Upgrade dependencies
+
 ## 1.0.0-beta.14
 
 ### Minor Changes
