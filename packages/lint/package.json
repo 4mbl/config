@@ -36,7 +36,7 @@
   "dependencies": {
     "eslint-plugin-react-compiler": "19.1.0-rc.2",
     "eslint-plugin-react-hooks": "7.1.1",
-    "oxlint": "1.66.x",
+    "oxlint": "1.68.x",
     "oxlint-tsgolint": "0.23.x"
   },
   "devDependencies": {
