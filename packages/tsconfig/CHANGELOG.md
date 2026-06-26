@@ -1,5 +1,11 @@
 # @4mbl/tsconfig Changelog
 
+## 5.0.0-beta.1
+
+### Minor Changes
+
+- 1bd158c: [next] Include framework generated files in rootDir scope
+
 ## 5.0.0-beta.0
 
 ### Major Changes
