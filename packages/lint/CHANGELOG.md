@@ -1,5 +1,11 @@
 # @4mbl/lint
 
+## 1.0.0-beta.20
+
+### Minor Changes
+
+- 0a0c233: Upgrade dependencies
+
 ## 1.0.0-beta.19
 
 ### Minor Changes
