@@ -1,5 +1,11 @@
 # @4mbl/lint
 
+## 1.0.0-beta.19
+
+### Minor Changes
+
+- 4d35fb5: [react] Disable react/jsx-no-literals rule
+
 ## 1.0.0-beta.18
 
 ### Minor Changes
