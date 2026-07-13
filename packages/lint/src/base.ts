@@ -162,6 +162,7 @@ function baseConfig(_options?: Partial<BaseOptions>) {
       'unicorn/no-anonymous-default-export': 'off',
       'eslint/sort-imports': 'off', // consider when oxfmt is setup
       'import/no-relative-parent-imports': 'off',
+      'unicorn/max-nested-calls': 'off',
 
       // currently produces too many false positives
       'eslint/no-magic-numbers': 'off',
