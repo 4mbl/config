@@ -1,5 +1,11 @@
 # @4mbl/lint
 
+## 1.0.0-beta.21
+
+### Minor Changes
+
+- ae2bb06: [base] Disable unicorn/max-nested-calls rule
+
 ## 1.0.0-beta.20
 
 ### Minor Changes
