@@ -37,7 +37,7 @@
     "eslint-plugin-react-compiler": "19.1.0-rc.2",
     "eslint-plugin-react-hooks": "7.1.1",
     "oxlint": "1.74.x",
-    "oxlint-tsgolint": "0.24.x"
+    "oxlint-tsgolint": "0.25.x"
   },
   "devDependencies": {
     "@4mbl/tsconfig": "workspace:*",
