@@ -24,6 +24,7 @@ function baseConfig(_options?: Partial<BaseOptions>) {
     },
     options: {
       typeAware: true,
+      typeCheck: true,
     },
     rules: {
       //* ERRORS - base rules that are always mistakes
