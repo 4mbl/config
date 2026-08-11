@@ -1,5 +1,12 @@
 # @4mbl/lint
 
+## 1.0.0-beta.24
+
+### Minor Changes
+
+- c713974: [base] Enable type-check within oxlint
+- 87a9f36: Upgrade dependencies
+
 ## 1.0.0-beta.23
 
 ### Minor Changes
