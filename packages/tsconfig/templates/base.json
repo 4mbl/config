@@ -32,6 +32,7 @@
     "strict": true,
     "checkJs": true,
     "erasableSyntaxOnly": true,
+    "exactOptionalPropertyTypes": true,
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true,
     "noFallthroughCasesInSwitch": true,
