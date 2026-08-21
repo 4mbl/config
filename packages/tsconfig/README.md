@@ -7,6 +7,7 @@
   * [Base (tsconfig)](#base-tsconfig)
   * [Node (tsconfig)](#node-tsconfig)
   * [Node-TS (tsconfig)](#node-ts-tsconfig)
+  * [Bun (tsconfig)](#bun-tsconfig)
   * [Browser (tsconfig)](#browser-tsconfig)
   * [Next (tsconfig)](#next-tsconfig)
   * [Vite React (app | node)](#vite-react-app--node)
@@ -46,6 +47,10 @@ Extends the base template with configuration specific to Node.js.
 ### Node-TS (<kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/node-ts.json)</kbd>)
 
 Extends the node template with configuration for TypeScript-only projects.
+
+### Bun (<kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/bun.json)</kbd>)
+
+Extends the base template with configuration specific to Bun.
 
 ### Browser (<kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/browser.json)</kbd>)
 

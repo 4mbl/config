@@ -8,6 +8,7 @@
   "homepage": "https://github.com/4mbl/config/tree/main/packages/tsconfig#readme",
   "exports": {
     "./browser": "./dist/browser.json",
+    "./bun": "./dist/bun.json",
     "./next": "./dist/next.json",
     "./node-ts": "./dist/node-ts.json",
     "./node": "./dist/node.json",
