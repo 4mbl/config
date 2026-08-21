@@ -77,11 +77,11 @@ Extends the base template with configuration from the Next.js app template.
   "extends": "@4mbl/tsconfig/next",
   "compilerOptions": {
     "paths": {
-      "@/*": ["./src/*"]
-    }
+      "@/*": ["./src/*"],
+    },
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
 }
 ```
 
@@ -98,8 +98,8 @@ Vite uses seperate `tsconfig` files for the application and the node environment
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+    { "path": "./tsconfig.node.json" },
+  ],
 }
 ```
 
@@ -107,7 +107,7 @@ Vite uses seperate `tsconfig` files for the application and the node environment
 
 ```jsonc
 {
-  "extends": "@4mbl/tsconfig/vite-react/app"
+  "extends": "@4mbl/tsconfig/vite-react/app",
 }
 ```
 
@@ -115,7 +115,7 @@ Vite uses seperate `tsconfig` files for the application and the node environment
 
 ```jsonc
 {
-  "extends": "@4mbl/tsconfig/vite-react/node"
+  "extends": "@4mbl/tsconfig/vite-react/node",
 }
 ```
 
