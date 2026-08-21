@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Bun",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "moduleResolution": "bundler",
+    "module": "preserve",
+    "paths": { "*": ["${configDir}/src/*"] },
+    "types": ["bun"],
+
+    "noEmit": true,
+    "allowImportingTsExtensions": true
+  }
+}

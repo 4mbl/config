@@ -2,15 +2,16 @@
 
 > Strict TypeScript configuration for various environments.
 
-* [Usage](#usage)
-* [Available templates](#available-templates)
-  * [Base (tsconfig)](#base-tsconfig)
-  * [Node (tsconfig)](#node-tsconfig)
-  * [Node-TS (tsconfig)](#node-ts-tsconfig)
-  * [Browser (tsconfig)](#browser-tsconfig)
-  * [Next (tsconfig)](#next-tsconfig)
-  * [Vite React (app | node)](#vite-react-app--node)
-* [Versioning](#versioning)
+- [Usage](#usage)
+- [Available templates](#available-templates)
+  - [Base (tsconfig)](#base-tsconfig)
+  - [Node (tsconfig)](#node-tsconfig)
+  - [Node-TS (tsconfig)](#node-ts-tsconfig)
+  - [Bun (tsconfig)](#bun-tsconfig)
+  - [Browser (tsconfig)](#browser-tsconfig)
+  - [Next (tsconfig)](#next-tsconfig)
+  - [Vite React (app | node)](#vite-react-app--node)
+- [Versioning](#versioning)
 
 ---
 
@@ -22,11 +23,21 @@ Install the [`@4mbl/tsconfig`](https://www.npmjs.com/package/@4mbl/tsconfig) npm
 npm install -D @4mbl/tsconfig
 ```
 
+Install the type definitions required by your environment:
+
+```shell
+# When using /node, /node-ts, /next, or /vite-react/node template
+npm install -D @types/node
+
+# When using /bun template
+bun add -D @types/bun
+```
+
 Create a `tsconfig.json` file in the root of your project and extend the desired `tsconfig` template.
 
 ```jsonc
 {
-  "extends": "@4mbl/tsconfig/node"
+  "extends": "@4mbl/tsconfig/node",
   // your custom configuration...
 }
 ```
@@ -47,6 +58,10 @@ Extends the base template with configuration specific to Node.js.
 
 Extends the node template with configuration for TypeScript-only projects.
 
+### Bun (<kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/bun.json)</kbd>)
+
+Extends the base template with configuration specific to Bun.
+
 ### Browser (<kbd>[tsconfig](https://unpkg.com/@4mbl/tsconfig@latest/browser.json)</kbd>)
 
 Extends the base template with configuration specific to browser and React applications.
@@ -62,11 +77,11 @@ Extends the base template with configuration from the Next.js app template.
   "extends": "@4mbl/tsconfig/next",
   "compilerOptions": {
     "paths": {
-      "@/*": ["./src/*"]
-    }
+      "@/*": ["./src/*"],
+    },
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
 }
 ```
 
@@ -83,8 +98,8 @@ Vite uses seperate `tsconfig` files for the application and the node environment
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+    { "path": "./tsconfig.node.json" },
+  ],
 }
 ```
 
@@ -92,7 +107,7 @@ Vite uses seperate `tsconfig` files for the application and the node environment
 
 ```jsonc
 {
-  "extends": "@4mbl/tsconfig/vite-react/app"
+  "extends": "@4mbl/tsconfig/vite-react/app",
 }
 ```
 
@@ -100,7 +115,7 @@ Vite uses seperate `tsconfig` files for the application and the node environment
 
 ```jsonc
 {
-  "extends": "@4mbl/tsconfig/vite-react/node"
+  "extends": "@4mbl/tsconfig/vite-react/node",
 }
 ```
 
