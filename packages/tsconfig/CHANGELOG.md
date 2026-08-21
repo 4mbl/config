@@ -1,5 +1,17 @@
 # @4mbl/tsconfig Changelog
 
+## 5.0.0-beta.2
+
+### Major Changes
+
+- f95bc32: [base] Enable noPropertyAccessFromIndexSignature
+- f95bc32: [base] Disable allowUnreachableCode
+- f95bc32: [base] Enable exactOptionalPropertyTypes
+
+### Minor Changes
+
+- fe250ba: Add template for Bun.
+
 ## 5.0.0-beta.1
 
 ### Minor Changes
