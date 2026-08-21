@@ -2,16 +2,16 @@
 
 > Strict TypeScript configuration for various environments.
 
-* [Usage](#usage)
-* [Available templates](#available-templates)
-  * [Base (tsconfig)](#base-tsconfig)
-  * [Node (tsconfig)](#node-tsconfig)
-  * [Node-TS (tsconfig)](#node-ts-tsconfig)
-  * [Bun (tsconfig)](#bun-tsconfig)
-  * [Browser (tsconfig)](#browser-tsconfig)
-  * [Next (tsconfig)](#next-tsconfig)
-  * [Vite React (app | node)](#vite-react-app--node)
-* [Versioning](#versioning)
+- [Usage](#usage)
+- [Available templates](#available-templates)
+  - [Base (tsconfig)](#base-tsconfig)
+  - [Node (tsconfig)](#node-tsconfig)
+  - [Node-TS (tsconfig)](#node-ts-tsconfig)
+  - [Bun (tsconfig)](#bun-tsconfig)
+  - [Browser (tsconfig)](#browser-tsconfig)
+  - [Next (tsconfig)](#next-tsconfig)
+  - [Vite React (app | node)](#vite-react-app--node)
+- [Versioning](#versioning)
 
 ---
 
@@ -23,11 +23,21 @@ Install the [`@4mbl/tsconfig`](https://www.npmjs.com/package/@4mbl/tsconfig) npm
 npm install -D @4mbl/tsconfig
 ```
 
+Install the type definitions required by your environment:
+
+```shell
+# When using /node, /node-ts, /next, or /vite-react/node template
+npm install -D @types/node
+
+# When using /bun template
+bun add -D @types/bun
+```
+
 Create a `tsconfig.json` file in the root of your project and extend the desired `tsconfig` template.
 
 ```jsonc
 {
-  "extends": "@4mbl/tsconfig/node"
+  "extends": "@4mbl/tsconfig/node",
   // your custom configuration...
 }
 ```
