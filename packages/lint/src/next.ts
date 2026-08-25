@@ -1,6 +1,7 @@
 import path from 'node:path';
 import process from 'node:process';
 import { defineConfig, type OxlintConfig } from 'oxlint';
+import { extendConfig } from './config.js';
 import { type ReactOptions, reactConfig } from './react.js';
 
 type NextOptions = ReactOptions & {
@@ -22,9 +23,8 @@ function nextConfig(options?: Partial<NextOptions>) {
 
   const react = reactConfig(options);
 
-  return defineConfig({
-    extends: [react],
-    plugins: [...react.plugins, 'nextjs'],
+  return extendConfig(react, {
+    plugins: ['nextjs'],
     rules: {
       'nextjs/google-font-display': 'warn',
       'nextjs/google-font-preconnect': 'warn',

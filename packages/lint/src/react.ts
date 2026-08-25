@@ -1,5 +1,6 @@
 import { defineConfig, type OxlintConfig } from 'oxlint';
 import { baseConfig } from './base.js';
+import { extendConfig } from './config.js';
 
 export type ReactOptions = {};
 
@@ -10,9 +11,8 @@ function reactConfig(options?: Partial<ReactOptions>) {
 
   const base = baseConfig(options);
 
-  return defineConfig({
-    extends: [base],
-    plugins: [...base.plugins, 'react', 'jsx-a11y'],
+  return extendConfig(base, {
+    plugins: ['react', 'jsx-a11y'],
     jsPlugins: [
       // react compiler is not yet supported by oxc
       // https://github.com/oxc-project/oxc/issues/10048
