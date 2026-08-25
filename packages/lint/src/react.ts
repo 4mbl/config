@@ -13,16 +13,7 @@ function reactConfig(options?: Partial<ReactOptions>) {
 
   return extendConfig(base, {
     plugins: ['react', 'jsx-a11y'],
-    jsPlugins: [
-      // react compiler is not yet supported by oxc
-      // https://github.com/oxc-project/oxc/issues/10048
-      // this means compiler related rules are not yet supported
-      // https://github.com/oxc-project/oxc/issues/1022
-      // react compiler port to rust may enable compiler related rules
-      // https://github.com/facebook/react/pull/36173
-      { name: 'react-hooks-js', specifier: 'eslint-plugin-react-hooks' },
-      { name: 'react-compiler-js', specifier: 'eslint-plugin-react-compiler' },
-    ],
+    jsPlugins: [],
     env: {
       browser: true,
       node: true,
@@ -39,11 +30,33 @@ function reactConfig(options?: Partial<ReactOptions>) {
     rules: {
       'react/rules-of-hooks': 'error',
       'react/exhaustive-deps': 'warn',
-      'react-hooks-js/set-state-in-effect': 'warn',
-      'react/only-export-components': 'error',
-      'react-compiler-js/react-compiler': 'error',
-      'import/no-anonymous-default-export': 'warn',
 
+      // react compiler rules
+      'react/error-boundaries': 'error',
+      'react/globals': 'error',
+      'react/immutability': 'error',
+      'react/incompatible-library': 'error',
+      'react/preserve-manual-memoization': 'error',
+      'react/purity': 'error',
+      'react/refs': 'error',
+      'react/set-state-in-effect': 'error',
+      'react/set-state-in-render': 'error',
+      'react/static-components': 'error',
+      'react/use-memo': 'error',
+      'react/void-use-memo': 'error',
+      'react/capitalized-calls': 'error',
+      'react/exhaustive-effect-dependencies': 'error',
+      'react/hooks': 'error',
+      'react/memo-dependencies': 'error',
+      'react/no-deriving-state-in-effects': 'error',
+      'react/invariant': 'error',
+      'react/rule-suppression': 'error',
+      'react/syntax': 'error',
+      'react/todo': 'error',
+      'react/unsupported-syntax': 'error',
+
+      'react/only-export-components': 'error',
+      'import/no-anonymous-default-export': 'warn',
       'react/jsx-filename-extension': 'off',
       'react/jsx-max-depth': 'off',
       'react/no-multi-comp': 'off',
