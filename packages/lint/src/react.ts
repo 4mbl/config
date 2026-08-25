@@ -80,7 +80,6 @@ function reactConfig(options?: Partial<ReactOptions>) {
           sampleRate: 'readonly',
           WorkletGlobalScope: 'readonly',
         },
-        plugins: ['import', 'jsx-a11y'],
         env: {
           browser: true,
           node: true,
