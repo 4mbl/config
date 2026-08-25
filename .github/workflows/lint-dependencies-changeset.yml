@@ -22,12 +22,7 @@ jobs:
 
       - name: Create changeset
         run: |
-          CHANGESET_DIR=".changeset"
-          if jq -e '.mode == "pre"' .changeset/pre.json > /dev/null 2>&1; then
-            CHANGESET_DIR=".changeset/pre"
-          fi
-
-          FILE_PATH="$CHANGESET_DIR/lint-deps-$(date +%Y-%m-%d).md"
+          FILE_PATH=".changeset/lint-deps-$(date +%Y-%m-%d).md"
           echo "---" > "$FILE_PATH"
           echo '"@4mbl/lint": minor' >> "$FILE_PATH"
           echo "---" >> "$FILE_PATH"
