@@ -23,12 +23,26 @@ function reactConfig(options?: Partial<ReactOptions>) {
       { name: 'react-hooks-js', specifier: 'eslint-plugin-react-hooks' },
       { name: 'react-compiler-js', specifier: 'eslint-plugin-react-compiler' },
     ],
+    env: {
+      browser: true,
+      node: true,
+    },
+    globals: {
+      AudioWorkletGlobalScope: 'readonly',
+      AudioWorkletProcessor: 'readonly',
+      currentFrame: 'readonly',
+      currentTime: 'readonly',
+      registerProcessor: 'readonly',
+      sampleRate: 'readonly',
+      WorkletGlobalScope: 'readonly',
+    },
     rules: {
       'react/rules-of-hooks': 'error',
       'react/exhaustive-deps': 'warn',
       'react-hooks-js/set-state-in-effect': 'warn',
       'react/only-export-components': 'error',
       'react-compiler-js/react-compiler': 'error',
+      'import/no-anonymous-default-export': 'warn',
 
       'react/jsx-filename-extension': 'off',
       'react/jsx-max-depth': 'off',
@@ -42,7 +56,7 @@ function reactConfig(options?: Partial<ReactOptions>) {
     },
     overrides: [
       {
-        files: ['**/*.{js,jsx,mjs,ts,tsx,mts,cts}'],
+        files: ['**/*.{jsx,tsx}'],
         rules: {
           'react/display-name': 'error',
           'react/jsx-key': 'error',
@@ -52,7 +66,6 @@ function reactConfig(options?: Partial<ReactOptions>) {
           'react/jsx-no-undef': 'error',
           'react/no-children-prop': 'error',
           'react/no-danger-with-children': 'error',
-          // "react/no-deprecated": "error", // not implemented yet in oxlint
           'react/no-direct-mutation-state': 'error',
           'react/no-find-dom-node': 'error',
           'react/no-is-mounted': 'error',
@@ -63,26 +76,12 @@ function reactConfig(options?: Partial<ReactOptions>) {
           'react/no-unsafe': 'off',
           'react/react-in-jsx-scope': 'off',
           'react/require-render-return': 'error',
-          'import/no-anonymous-default-export': 'warn',
           'jsx-a11y/alt-text': ['warn', { elements: ['img'], img: ['Image'] }],
           'jsx-a11y/aria-props': 'warn',
           'jsx-a11y/aria-proptypes': 'warn',
           'jsx-a11y/aria-unsupported-elements': 'warn',
           'jsx-a11y/role-has-required-aria-props': 'warn',
           'jsx-a11y/role-supports-aria-props': 'warn',
-        },
-        globals: {
-          AudioWorkletGlobalScope: 'readonly',
-          AudioWorkletProcessor: 'readonly',
-          currentFrame: 'readonly',
-          currentTime: 'readonly',
-          registerProcessor: 'readonly',
-          sampleRate: 'readonly',
-          WorkletGlobalScope: 'readonly',
-        },
-        env: {
-          browser: true,
-          node: true,
         },
       },
     ],
