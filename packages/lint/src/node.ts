@@ -1,5 +1,6 @@
 import { defineConfig, type OxlintConfig } from 'oxlint';
 import { baseConfig } from './base.js';
+import { extendConfig } from './config.js';
 
 type NodeOptions = {};
 
@@ -10,10 +11,7 @@ function nodeConfig(options?: Partial<NodeOptions>) {
 
   const base = baseConfig(options);
 
-  return defineConfig({
-    extends: [base],
-    // when changing plugins the parent plugins need to be extended, otherwise they are overridden
-    plugins: base.plugins,
+  return extendConfig(base, {
     env: {
       node: true,
     },
