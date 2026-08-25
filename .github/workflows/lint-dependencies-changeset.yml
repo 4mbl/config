@@ -1,4 +1,4 @@
-name: "[lint] Create changeset for dependency upgrades"
+name: '[lint] Create changeset for dependency upgrades'
 
 on:
   workflow_dispatch:
@@ -22,15 +22,20 @@ jobs:
 
       - name: Create changeset
         run: |
-          FILE_PATH=".changeset/lint-deps-$(date +%Y-%m-%d).md"
-          echo "---" > $FILE_PATH
-          echo '"@4mbl/lint": minor' >> $FILE_PATH
-          echo "---" >> $FILE_PATH
-          echo "" >> $FILE_PATH
-          echo "Upgrade dependencies" >> $FILE_PATH
+          CHANGESET_DIR=".changeset"
+          if jq -e '.mode == "pre"' .changeset/pre.json > /dev/null 2>&1; then
+            CHANGESET_DIR=".changeset/pre"
+          fi
+
+          FILE_PATH="$CHANGESET_DIR/lint-deps-$(date +%Y-%m-%d).md"
+          echo "---" > "$FILE_PATH"
+          echo '"@4mbl/lint": minor' >> "$FILE_PATH"
+          echo "---" >> "$FILE_PATH"
+          echo "" >> "$FILE_PATH"
+          echo "Upgrade dependencies" >> "$FILE_PATH"
 
           git switch -c lint-upgrade-deps-changeset
-          git add $FILE_PATH
+          git add "$FILE_PATH"
           git commit -m "docs(changeset): upgrade dependencies"
           git push origin HEAD
           gh pr create --title "docs(changeset): upgrade dependencies" --body ""
