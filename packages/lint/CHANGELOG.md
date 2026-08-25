@@ -1,5 +1,11 @@
 # @4mbl/lint
 
+## 1.0.0-beta.28
+
+### Patch Changes
+
+- cd19ade: Preserve all config properties when extending presets
+
 ## 1.0.0-beta.27
 
 ### Minor Changes
