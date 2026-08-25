@@ -1,5 +1,16 @@
 # @4mbl/lint
 
+## 1.0.0-beta.27
+
+### Minor Changes
+
+- 10abc93: Upgrade dependencies
+
+### Patch Changes
+
+- dcfb4b0: [react] Preserve inherited plugins.
+- f48a223: [react] Scope JSX rules in React preset
+
 ## 1.0.0-beta.26
 
 ### Minor Changes
