@@ -1,5 +1,11 @@
 # @4mbl/lint
 
+## 1.0.0-beta.29
+
+### Minor Changes
+
+- fec850c: Migrate to native React Compiler rules
+
 ## 1.0.0-beta.28
 
 ### Patch Changes
