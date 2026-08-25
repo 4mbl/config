@@ -12,7 +12,7 @@ function reactConfig(options?: Partial<ReactOptions>) {
 
   return defineConfig({
     extends: [base],
-    plugins: [...base.plugins, 'react'],
+    plugins: [...base.plugins, 'react', 'jsx-a11y'],
     jsPlugins: [
       // react compiler is not yet supported by oxc
       // https://github.com/oxc-project/oxc/issues/10048
