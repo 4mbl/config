@@ -34,7 +34,9 @@
     "erasableSyntaxOnly": true,
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
-    "exactOptionalPropertyTypes": true,
+    // exactOptionalPropertyTypes causes too much noise to enable.
+    // Disabled explicitly as a reminder to keep it off.
+    "exactOptionalPropertyTypes": false,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
