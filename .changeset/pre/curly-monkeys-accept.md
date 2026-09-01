@@ -2,4 +2,4 @@
 "@4mbl/tsconfig": major
 ---
 
-[base] Enable noPropertyAccessFromIndexSignature
+[base] Disable noPropertyAccessFromIndexSignature explicitly
