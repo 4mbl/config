@@ -1,5 +1,11 @@
 # @4mbl/tsconfig Changelog
 
+## 5.0.0-beta.3
+
+### Major Changes
+
+- f95bc32: [base] Disable noPropertyAccessFromIndexSignature explicitly
+
 ## 5.0.0-beta.2
 
 ### Major Changes
