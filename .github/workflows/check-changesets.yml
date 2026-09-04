@@ -6,4 +6,4 @@ on:
 
 jobs:
   check-changesets:
-    uses: 4mbl/actions/.github/workflows/changeset-comment.yml@6d4ffb1e177ced1f08ee05b0df6a39ef8e231a1a # v1
+    uses: 4mbl/actions/.github/workflows/changeset-comment.yml@96fa92ed0d4d9658bb2d050b5267307c9d9ee324 # v1
