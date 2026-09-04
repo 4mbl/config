@@ -164,6 +164,7 @@ function baseConfig(_options?: Partial<BaseOptions>) {
       'eslint/sort-imports': 'off', // consider when oxfmt is setup
       'import/no-relative-parent-imports': 'off',
       'unicorn/max-nested-calls': 'off',
+      'eslint/one-var': 'off', // consider enforcing one separate variable declarations
 
       // currently produces too many false positives
       'eslint/no-magic-numbers': 'off',
