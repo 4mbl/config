@@ -1,5 +1,11 @@
 # @4mbl/lint
 
+## 1.0.0-beta.31
+
+### Minor Changes
+
+- ab2e6d6: [base] Disable eslint/one-var rule
+
 ## 1.0.0-beta.30
 
 ### Minor Changes
