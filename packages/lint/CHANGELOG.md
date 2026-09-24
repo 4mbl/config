@@ -1,5 +1,11 @@
 # @4mbl/lint
 
+## 1.0.0-beta.32
+
+### Minor Changes
+
+- 02f7629: Upgrade dependencies
+
 ## 1.0.0-beta.31
 
 ### Minor Changes
