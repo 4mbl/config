@@ -4,6 +4,16 @@ updates:
     directory: '/'
     schedule:
       interval: 'weekly'
+    groups:
+      lint:
+        patterns:
+          - 'oxlint'
+          - 'oxlint-tsgolint'
+      monorepo:
+        patterns:
+          - 'turbo'
+          - '@changesets/cli'
+          - '@types/node'
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
