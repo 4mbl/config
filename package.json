@@ -14,8 +14,19 @@
     "@changesets/cli": "^3.0.3",
     "turbo": "^2.11.2"
   },
-  "packageManager": "pnpm@10.13.1",
   "engines": {
     "node": ">=24.5.0"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "24.x",
+      "onFail": "download"
+    },
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.5.0",
+      "onFail": "download"
+    }
   }
 }
