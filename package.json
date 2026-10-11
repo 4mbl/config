@@ -12,7 +12,7 @@
   "keywords": [],
   "devDependencies": {
     "@changesets/cli": "^3.0.3",
-    "turbo": "^2.11.5"
+    "turbo": "^2.11.7"
   },
   "engines": {
     "node": ">=24.5.0"
