@@ -12,7 +12,7 @@ function reactConfig(options?: Partial<ReactOptions>) {
   const base = baseConfig(options);
 
   return extendConfig(base, {
-    plugins: ['react', 'jsx-a11y'],
+    plugins: ['react', 'react-perf', 'jsx-a11y'],
     jsPlugins: [],
     env: {
       browser: true,
@@ -28,6 +28,11 @@ function reactConfig(options?: Partial<ReactOptions>) {
       WorkletGlobalScope: 'readonly',
     },
     rules: {
+      'react-perf/jsx-no-jsx-as-prop': 'warn',
+      'react-perf/jsx-no-new-array-as-prop': 'warn',
+      'react-perf/jsx-no-new-function-as-prop': 'warn',
+      'react-perf/jsx-no-new-object-as-prop': 'warn',
+
       'react/rules-of-hooks': 'error',
       'react/exhaustive-deps': 'warn',
 
