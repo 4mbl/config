@@ -1,5 +1,11 @@
 # @4mbl/lint
 
+## 1.0.0-beta.35
+
+### Minor Changes
+
+- 5dfaf7e: \[react] Enable react-perf plugin.
+
 ## 1.0.0-beta.34
 
 ### Minor Changes
