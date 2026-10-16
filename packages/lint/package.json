@@ -39,6 +39,6 @@
   },
   "devDependencies": {
     "@4mbl/tsconfig": "workspace:*",
-    "@types/node": "^24.19.1"
+    "@types/node": "^24.19.2"
   }
 }
