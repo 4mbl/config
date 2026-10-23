@@ -34,7 +34,7 @@
     "build": "tsc"
   },
   "dependencies": {
-    "oxlint": "1.88.x",
+    "oxlint": "1.89.x",
     "oxlint-tsgolint": "7.0.x"
   },
   "devDependencies": {
